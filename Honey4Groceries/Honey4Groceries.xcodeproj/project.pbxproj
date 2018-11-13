@@ -12,6 +12,10 @@
 		5A5FD6AB219A753B000B31AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5FD6AA219A753B000B31AB /* ViewController.swift */; };
 		5A5FD6B0219A753F000B31AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A5FD6AF219A753F000B31AB /* Assets.xcassets */; };
 		5A5FD6B3219A753F000B31AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5FD6B1219A753F000B31AB /* LaunchScreen.storyboard */; };
+		E009E60B219B6C3700CA081E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60A219B6C3700CA081E /* Alamofire.framework */; };
+		E009E60D219B6C3700CA081E /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60C219B6C3700CA081E /* PromiseKit.framework */; };
+		E009E60F219B6C3700CA081E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60E219B6C3700CA081E /* SwiftyJSON.framework */; };
+		E09E2146219B60DC00EE7FA7 /* Tester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09E2145219B60DC00EE7FA7 /* Tester.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +27,10 @@
 		5A5FD6AF219A753F000B31AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A5FD6B2219A753F000B31AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A5FD6B4219A753F000B31AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E009E60A219B6C3700CA081E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E009E60C219B6C3700CA081E /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E009E60E219B6C3700CA081E /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E09E2145219B60DC00EE7FA7 /* Tester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tester.swift; sourceTree = "<group>"; };
 		F3F4D0D3BB1DF8CEC4CE8B0D /* Pods-Honey4Groceries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honey4Groceries.release.xcconfig"; path = "Pods/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -31,6 +39,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E009E60B219B6C3700CA081E /* Alamofire.framework in Frameworks */,
+				E009E60D219B6C3700CA081E /* PromiseKit.framework in Frameworks */,
+				E009E60F219B6C3700CA081E /* SwiftyJSON.framework in Frameworks */,
 				186711B6351E5EFB52C9BA97 /* Pods_Honey4Groceries.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,6 +52,9 @@
 		053551F9104D34C9DA9E2C72 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E009E60A219B6C3700CA081E /* Alamofire.framework */,
+				E009E60C219B6C3700CA081E /* PromiseKit.framework */,
+				E009E60E219B6C3700CA081E /* SwiftyJSON.framework */,
 				3D8F1DEF9D3421F20C29970D /* Pods_Honey4Groceries.framework */,
 			);
 			name = Frameworks;
@@ -105,6 +119,7 @@
 		5A7B45EE219A7B6000DF87DF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				E09E2145219B60DC00EE7FA7 /* Tester.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -257,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E09E2146219B60DC00EE7FA7 /* Tester.swift in Sources */,
 				5A5FD6AB219A753B000B31AB /* ViewController.swift in Sources */,
 				5A5FD6A9219A753B000B31AB /* AppDelegate.swift in Sources */,
 			);
@@ -400,6 +416,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JFKG4HDM34;
 				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -419,6 +436,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JFKG4HDM34;
 				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
