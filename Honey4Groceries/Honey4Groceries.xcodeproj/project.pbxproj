@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		186711B6351E5EFB52C9BA97 /* Pods_Honey4Groceries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D8F1DEF9D3421F20C29970D /* Pods_Honey4Groceries.framework */; };
+		5A30BCC621A9D2930032F77E /* ResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A30BCC521A9D2930032F77E /* ResponseProtocol.swift */; };
+		5A30BCC821A9D71F0032F77E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A30BCC721A9D71F0032F77E /* Response.swift */; };
 		5A5FD6A9219A753B000B31AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5FD6A8219A753B000B31AB /* AppDelegate.swift */; };
 		5A5FD6AB219A753B000B31AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5FD6AA219A753B000B31AB /* ViewController.swift */; };
 		5A5FD6B0219A753F000B31AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A5FD6AF219A753F000B31AB /* Assets.xcassets */; };
@@ -15,12 +17,13 @@
 		E009E60B219B6C3700CA081E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60A219B6C3700CA081E /* Alamofire.framework */; };
 		E009E60D219B6C3700CA081E /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60C219B6C3700CA081E /* PromiseKit.framework */; };
 		E009E60F219B6C3700CA081E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60E219B6C3700CA081E /* SwiftyJSON.framework */; };
-		E09E2146219B60DC00EE7FA7 /* Tester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09E2145219B60DC00EE7FA7 /* Tester.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		35927C906C3059E248BA10D8 /* Pods-Honey4Groceries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honey4Groceries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries.debug.xcconfig"; sourceTree = "<group>"; };
 		3D8F1DEF9D3421F20C29970D /* Pods_Honey4Groceries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Honey4Groceries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A30BCC521A9D2930032F77E /* ResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseProtocol.swift; sourceTree = "<group>"; };
+		5A30BCC721A9D71F0032F77E /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		5A5FD6A5219A753B000B31AB /* Honey4Groceries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Honey4Groceries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5FD6A8219A753B000B31AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A5FD6AA219A753B000B31AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,7 +33,6 @@
 		E009E60A219B6C3700CA081E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E009E60C219B6C3700CA081E /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E009E60E219B6C3700CA081E /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E09E2145219B60DC00EE7FA7 /* Tester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tester.swift; sourceTree = "<group>"; };
 		F3F4D0D3BB1DF8CEC4CE8B0D /* Pods-Honey4Groceries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honey4Groceries.release.xcconfig"; path = "Pods/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,7 +121,8 @@
 		5A7B45EE219A7B6000DF87DF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				E09E2145219B60DC00EE7FA7 /* Tester.swift */,
+				5A30BCC521A9D2930032F77E /* ResponseProtocol.swift */,
+				5A30BCC721A9D71F0032F77E /* Response.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -272,7 +275,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E09E2146219B60DC00EE7FA7 /* Tester.swift in Sources */,
+				5A30BCC821A9D71F0032F77E /* Response.swift in Sources */,
+				5A30BCC621A9D2930032F77E /* ResponseProtocol.swift in Sources */,
 				5A5FD6AB219A753B000B31AB /* ViewController.swift in Sources */,
 				5A5FD6A9219A753B000B31AB /* AppDelegate.swift in Sources */,
 			);
