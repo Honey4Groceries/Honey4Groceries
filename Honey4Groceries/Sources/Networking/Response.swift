@@ -29,7 +29,7 @@ public class Response: ResponseProtocol {
     public lazy var jsonData: JSON = try! JSON(data: rawData ?? Data())
     
     /// Initialize
-    public init(afResponse response: DefaultDataResponse, request: ResponseProtocol){
+    public init(afResponse response: DefaultDataResponse) {
         self.type = Result.from(response: response.response)
         self.httpResponse = response.response
         self.rawData = response.data
