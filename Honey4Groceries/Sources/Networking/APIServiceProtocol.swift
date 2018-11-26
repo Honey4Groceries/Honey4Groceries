@@ -17,7 +17,7 @@ public protocol APIServiceProtocol {
     ///
     /// - Parameters:
     ///     - request: request to be executed
-    /// - Returns: Promise<ResponseProtocol>
+    /// - Returns: Response from API call with specified request as Promise with Response type
     func execute(_ request: RequestProtocol) -> Promise<ResponseProtocol>
     
 }

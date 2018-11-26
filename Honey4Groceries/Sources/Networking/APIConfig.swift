@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Stores API configurations including base URL and default parameters(e.g. API key)
 public final class APIConfig {
     
     /// Name of API
@@ -21,9 +22,9 @@ public final class APIConfig {
     /// Initialize a new APIConfig
     ///
     /// - Parameters:
-    ///     - name: name of configuration
-    ///     - url: base url for API
-    ///     - defaultParameters: parameters that must be included
+    ///     - name: Name of configuration
+    ///     - urlString: Base url for API
+    ///     - defaultParameters: Parameters that must be included for API call
     public init?(name: String? = nil, base urlString: String, defaultParameters: Parameters? = nil) {
         guard let url = URL(string: urlString) else { return nil }
         self.url = url

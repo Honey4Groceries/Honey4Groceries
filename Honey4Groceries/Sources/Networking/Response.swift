@@ -28,7 +28,10 @@ public class Response: ResponseProtocol {
     /// JSON Data of Response
     public lazy var jsonData: JSON = try! JSON(data: rawData ?? Data())
     
-    /// Initialize
+    /// Initialize a new Response with given Alamofire response
+    ///
+    /// - Parameters:
+    ///     - response: response from Alamofire
     public init(afResponse response: DefaultDataResponse) {
         self.type = Result.from(response: response.response)
         self.httpResponse = response.response

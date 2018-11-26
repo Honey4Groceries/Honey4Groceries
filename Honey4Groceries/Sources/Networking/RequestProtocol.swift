@@ -9,7 +9,6 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 
-/// Base class for Request
 public protocol RequestProtocol {
     
     /// Endpoint of request
