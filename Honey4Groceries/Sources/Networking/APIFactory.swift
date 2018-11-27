@@ -7,10 +7,16 @@
 
 import Foundation
 
+/// Factory class that builds APIService objects
 public class APIFactory {
     
-    public static func build(type: API) -> APIService throws {
-        guard let config = APIConfigs[type] else { throw APIFactoryError.invalidBuild }
+    /// Factory function that builds an APIService by taking in an API type
+    ///
+    /// - Parameters:
+    ///     - type: type of API
+    /// - Returns: APIService instance of specified API
+    public static func build(type: API) -> APIService? {
+        guard let config = APIConfigs[type] else { return nil }
         return APIService(config)
     }
     

@@ -15,6 +15,12 @@ public class Request: RequestProtocol {
     /// Parameters for request
     public var parameters: Parameters?
     
+    
+    /// Initialize a new Request
+    ///
+    /// - Parameters:
+    ///     - endpoint: API endpoint as String (e.g. venues/search/)
+    ///     - parameters: Parameters for HTTP request
     public init(endpoint: String = "", parameters: Parameters? = nil) {
         self.endpoint = endpoint
         self.parameters = parameters
