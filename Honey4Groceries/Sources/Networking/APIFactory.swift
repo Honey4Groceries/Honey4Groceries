@@ -9,9 +9,13 @@ import Foundation
 
 public class APIFactory {
     
-    public static func build(type: API) -> APIService? {
-        guard let config = APIConfigs[type] else { return nil }
+    public static func build(type: API) -> APIService throws {
+        guard let config = APIConfigs[type] else { throw APIFactoryError.invalidBuild }
         return APIService(config)
+    }
+    
+    enum APIFactoryError: Error {
+        case invalidBuild
     }
     
 }

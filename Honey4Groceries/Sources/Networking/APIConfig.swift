@@ -33,4 +33,15 @@ public final class APIConfig {
         self.defaultParameters = defaultParameters
     }
     
+    public func getName() ->String {
+        return name
+    }
+    
+    public func getUrl() -> URL {
+        return url
+    }
+    
+    public func getDefaultParameters() -> Parameters? {
+        return defaultParameters
+    }
 }
