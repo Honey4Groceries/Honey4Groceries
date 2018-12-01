@@ -8,6 +8,7 @@
 import UIKit
 import CoreLocation
 import PromiseKit
+import SwiftyJSON
 
 public class Store {
     //let searchVenuesEndpoint = "venues/search"
@@ -46,8 +47,8 @@ public class Store {
     }
     
     static func getStoresAsDictionary(Stores: ResponseProtocol) -> [Dictionary<String, String>] {
-        // TODO
-        // Iterate through JSON data of stores, call getStoreHours for each Store iteration to get the hours for that store
+        Stores.jsonData;
+        // Iterate through JSON data of stores, convert to Dictionary
     }
     
     static func getStoreHours(Store: Dictionary<String, String>) -> [Dictionary<String, String>] {
