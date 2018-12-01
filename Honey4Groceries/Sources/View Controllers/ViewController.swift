@@ -6,11 +6,17 @@
 //
 
 import UIKit
+import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Hello")
+        let location = LocationService()
+        location.requestAuth()
+        print("\(location)")
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 

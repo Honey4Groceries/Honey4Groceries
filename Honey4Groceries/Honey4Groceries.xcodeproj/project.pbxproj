@@ -16,6 +16,7 @@
 		E009E60D219B6C3700CA081E /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60C219B6C3700CA081E /* PromiseKit.framework */; };
 		E009E60F219B6C3700CA081E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60E219B6C3700CA081E /* SwiftyJSON.framework */; };
 		E09E2146219B60DC00EE7FA7 /* Tester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09E2145219B60DC00EE7FA7 /* Tester.swift */; };
+		FCAB674F21AE07BD009A92A0 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB674E21AE07BD009A92A0 /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E009E60E219B6C3700CA081E /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E09E2145219B60DC00EE7FA7 /* Tester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tester.swift; sourceTree = "<group>"; };
 		F3F4D0D3BB1DF8CEC4CE8B0D /* Pods-Honey4Groceries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honey4Groceries.release.xcconfig"; path = "Pods/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries.release.xcconfig"; sourceTree = "<group>"; };
+		FCAB674E21AE07BD009A92A0 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		5A7B45EF219A7B7700DF87DF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FCAB674E21AE07BD009A92A0 /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -213,11 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-			);
-			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
@@ -272,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCAB674F21AE07BD009A92A0 /* LocationService.swift in Sources */,
 				E09E2146219B60DC00EE7FA7 /* Tester.swift in Sources */,
 				5A5FD6AB219A753B000B31AB /* ViewController.swift in Sources */,
 				5A5FD6A9219A753B000B31AB /* AppDelegate.swift in Sources */,
