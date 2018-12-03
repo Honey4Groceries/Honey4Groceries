@@ -36,23 +36,30 @@ public class Store {
         return [startTime, endTime]
     }
     
-    static func searchStores(Radius: Int, Location: CLLocation) -> [Dictionary<String, String>] {
-        firstly {
-            APIFactory.build(type: API.Foursquare).execute(Request(endpoint: "venues/search", parameters: ["ll": String(Location.coordinate.latitude) + "," + String(Location.coordinate.longitude)]))
-        }.done { response in
-            getStoresAsDictionary(Stores: response)
-        }.catch { error in
-                
-        }
-    }
-    
     static func getStoresAsDictionary(Stores: ResponseProtocol) -> [Dictionary<String, String>] {
-        Stores.jsonData;
+        //Stores.jsonData;
         // Iterate through JSON data of stores, convert to Dictionary
+        return []
     }
     
     static func getStoreHours(Store: Dictionary<String, String>) -> [Dictionary<String, String>] {
         // TODO
         // Must make another API call for each Store venue to get the store hours
+        return []
+    }
+    
+    static func getStoreHoursAsDictionary(StoreHours: ResponseProtocol) -> [Dictionary<String, String>] {
+        return []
+    }
+    
+    static func searchStores(Radius: Int, Location: CLLocation, Endpoint: String = "venues/search", Limit: String = "10", CategoryID: String = "4bf58dd8d48988d118951735") -> [Dictionary<String, String>] {
+        
+        let parameters = ["radius": String(Radius), "ll": String(Location.coordinate.latitude) + "," + String(Location.coordinate.longitude), "limit": Limit, "categoryID": CategoryID]
+        
+       
+        return (APIFactory.build(type: API.Foursquare)?.execute(Request(endpoint: Endpoint, parameters: parameters))
+            .map { response in
+                getStoresAsDictionary(Stores: response)
+            }.value)!
     }
 }

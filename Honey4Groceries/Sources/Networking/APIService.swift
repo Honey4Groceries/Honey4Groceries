@@ -28,8 +28,14 @@ public class APIService: APIServiceProtocol {
     /// - Parameters:
     ///     - request: request to be executed
     /// - Returns: Promise<ResponseProtocol>
-    public func execute(_ request: RequestProtocol) -> Promise<ResponseProtocol>{
-        Alamofire.request(configuration.url + configuration.defaultParameters)
+    public func execute(_ request: RequestProtocol) -> Promise<ResponseProtocol> {
+        return Promise { seal in
+            Alamofire.request(configuration.getUrl().absoluteString + request.endpoint, parameters: configuration.getDefaultParameters()?.merging(request.parameters!, uniquingKeysWith: { (first, _) in first })).response { response in
+                // not using .responseJSON because the Response class wants a DefaultDataResponse
+                
+                seal.fulfill(Response(afResponse: response))
+            }
+        }
     }
     
 }
