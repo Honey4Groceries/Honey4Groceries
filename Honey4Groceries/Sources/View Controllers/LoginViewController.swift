@@ -56,6 +56,7 @@ class LoginViewController: UIViewController {
         button.backgroundColor = .clear
         button.autoSetDimension(.width, toSize: buttonWidth)
         button.autoSetDimension(.height, toSize: buttonHeight)
+        button.addTarget(self, action: #selector(self.loginAction), for: .touchUpInside)
         return button
     }()
 
@@ -76,6 +77,7 @@ class LoginViewController: UIViewController {
     lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Password"
+        textField.isSecureTextEntry = true
         textField.setLeftPaddingPoints(verticalPadding)
         textField.setRightPaddingPoints(verticalPadding)
         textField.layer.cornerRadius = boundaryRadius
@@ -114,6 +116,12 @@ class LoginViewController: UIViewController {
         self.view.addSubview(usernameTextField)
         self.view.addSubview(passwordTextField)
         self.view.addSubview(loginButton)
+    }
+
+    /// Login the user after the button is pressed.
+    @objc func loginAction(sender: UIButton) {
+        print(self.usernameTextField.text!)
+        print(self.passwordTextField.text!)
     }
 
     /**
