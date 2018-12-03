@@ -10,64 +10,101 @@ import PureLayout
 
 class LoginViewController: UIViewController {
     
-    let screenWidth = Double(ALDimension.width)
-    let screenHeight = Double(ALDimension.height)
+    let boundaryRadius: CGFloat = 4.0
+    let boundaryWidth: CGFloat = 1.0
+    let boundaryColor = UIColor.gray.cgColor
     
-    lazy var textWidth = screenWidth * 0.8
-    lazy var textHeight = screenHeight * 0.1
+    let textfieldHeight: CGFloat = 40.0
+    let textfieldXInset: CGFloat = 20.0
     
-    lazy var middleX = screenWidth / 2
-    lazy var middleY = screenHeight / 2
+    let usernameYInset: CGFloat = 75.0
+    let passwordYInset: CGFloat = 150.0
+    let loginYInset: CGFloat = 20.0
     
-    lazy var textXPos = screenWidth * 0.1
-    lazy var loginTextYPos = screenHeight * 0.2
-    lazy var passwordTextYPos = screenHeight * 0.4
+    let buttonWidth: CGFloat = 96.0
+    let buttonHeight: CGFloat = 32.0
     
-    var loginTextField: UITextField!
-    var passwordTextField: UITextField!
+    let leftPadding: CGFloat = 10.0
+
+    lazy var loginButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Login", for: .normal)
+        button.setTitleColor(.gray, for: .normal)
+        button.layer.cornerRadius = boundaryRadius
+        button.layer.borderColor = boundaryColor
+        button.layer.borderWidth = boundaryWidth
+        button.tintColor = .gray
+        button.backgroundColor = .clear
+        button.autoSetDimension(.width, toSize: buttonWidth)
+        button.autoSetDimension(.height, toSize: buttonHeight)
+        return button
+    }()
     
-    var loginName: String?
-    var loginPassword: String?
+    lazy var usernameTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Username"
+        textField.setLeftPaddingPoints(leftPadding)
+        textField.layer.cornerRadius = boundaryRadius
+        textField.layer.borderColor = boundaryColor
+        textField.layer.borderWidth = boundaryWidth
+        textField.autoSetDimension(.height, toSize: textfieldHeight)
+        return textField
+    }()
+    
+    lazy var passwordTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Password"
+        textField.setLeftPaddingPoints(leftPadding)
+        textField.layer.cornerRadius = boundaryRadius
+        textField.layer.borderColor = boundaryColor
+        textField.layer.borderWidth = boundaryWidth
+        textField.autoSetDimension(.height, toSize: textfieldHeight)
+        return textField
+    }()
+    
+    func setupConstraints() {
+        loginButton.autoAlignAxis(toSuperviewAxis: .vertical)
+        if #available(iOS 11.0, *) {
+            loginButton.autoPinEdge(toSuperviewSafeArea: .bottom, withInset: loginYInset)
+            usernameTextField.autoPinEdge(toSuperviewSafeArea: .top, withInset: usernameYInset)
+            passwordTextField.autoPinEdge(toSuperviewSafeArea: .top, withInset: passwordYInset)
+        } else {
+            loginButton.autoPinEdge(toSuperviewEdge: .bottom, withInset: loginYInset)
+            usernameTextField.autoPinEdge(toSuperviewEdge: .top, withInset: usernameYInset)
+            passwordTextField.autoPinEdge(toSuperviewEdge: .top, withInset: passwordYInset)
+        }
+        usernameTextField.autoPinEdge(toSuperviewEdge: .left, withInset: textfieldXInset)
+        usernameTextField.autoPinEdge(toSuperviewEdge: .right, withInset: textfieldXInset)
+        passwordTextField.autoPinEdge(toSuperviewEdge: .left, withInset: textfieldXInset)
+        passwordTextField.autoPinEdge(toSuperviewEdge: .right, withInset: textfieldXInset)
+    }
+    
+    func addSubviews() {
+        self.view.addSubview(usernameTextField)
+        self.view.addSubview(passwordTextField)
+        self.view.addSubview(loginButton)
+    }
     
     override func viewDidLoad() {
 
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        loginTextField = UITextField( frame: CGRect(x: textXPos, y: loginTextYPos, width: textWidth, height: textHeight))
-        passwordTextField = UITextField( frame: CGRect(x: textXPos, y: passwordTextYPos, width: textWidth, height: textHeight))
-        let loginButton = UIButton(frame: CGRect(x: 100, y: 500, width: 100, height: 50))
-        loginButton.backgroundColor = UIColor.blue
-        
-        loginTextField.placeholder = "Login"
-        passwordTextField.placeholder = "Password"
-        loginButton.setTitle("Login", for: UIControl.State.normal)
-        
-        loginTextField.borderStyle = UITextField.BorderStyle.roundedRect
-        passwordTextField.borderStyle = UITextField.BorderStyle.roundedRect
-        
-        loginButton.addTarget(self, action: #selector(self.buttonAction), for: .touchUpInside)
-
-        self.view.addSubview(loginTextField)
-        self.view.addSubview(passwordTextField)
-        self.view.addSubview(loginButton)
+        self.view.backgroundColor = .white
+        self.addSubviews()
+        self.setupConstraints()
     }
-    
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension UITextField {
+    func setLeftPaddingPoints(_ amount: CGFloat) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.leftView = paddingView
+        self.leftViewMode = .always
     }
-    */
-    
-    @objc func buttonAction(sender: UIButton!) {
-        print("Pressed")
-        loginName = loginTextField.text
-        loginPassword = passwordTextField.text
-        print(screenWidth)
-        print(screenHeight)
+    func setRightPaddingPoints(_ amount: CGFloat) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.rightView = paddingView
+        self.rightViewMode = .always
     }
 }
