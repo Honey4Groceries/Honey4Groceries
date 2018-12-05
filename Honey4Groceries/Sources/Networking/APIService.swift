@@ -28,12 +28,6 @@ public class APIService: APIServiceProtocol {
     /// - Parameters:
     ///     - request: request to be executed
     /// - Returns: Promise<ResponseProtocol>
-<<<<<<< HEAD
-    public func execute(_ request: RequestProtocol) -> Promise<ResponseProtocol>{
-        // convert getURL, getDefaultParameters, parameters to type String
-        Alamofire.request(configuration.getUrl().absoluteString +  request.endpoint + "?" + configuration.getDefaultParameters() + request.parameters).responseJSON { response in
-            return Promise { Response(response) }
-=======
     public func execute(_ request: RequestProtocol) -> Promise<ResponseProtocol> {
         return Promise { seal in
             Alamofire.request(configuration.getUrl().absoluteString + request.endpoint, parameters: configuration.getDefaultParameters()?.merging(request.parameters!, uniquingKeysWith: { (first, _) in first })).response { response in
@@ -41,8 +35,6 @@ public class APIService: APIServiceProtocol {
                 
                 seal.fulfill(Response(afResponse: response))
             }
->>>>>>> 703efacc6ed7937a6bd054b4a2bce63871335118
         }
     }
-    
 }
