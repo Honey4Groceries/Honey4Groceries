@@ -29,7 +29,10 @@ public class APIService: APIServiceProtocol {
     ///     - request: request to be executed
     /// - Returns: Promise<ResponseProtocol>
     public func execute(_ request: RequestProtocol) -> Promise<ResponseProtocol>{
-        Alamofire.request(configuration.url + configuration.defaultParameters)
+        // convert getURL, getDefaultParameters, parameters to type String
+        Alamofire.request(configuration.getUrl().absoluteString +  request.endpoint + "?" + configuration.getDefaultParameters() + request.parameters).responseJSON { response in
+            return Promise { Response(response) }
+        }
     }
     
 }

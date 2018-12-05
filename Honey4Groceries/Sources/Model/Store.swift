@@ -36,7 +36,7 @@ public class Store {
         return [startTime, endTime]
     }
     
-    static func searchStores(Radius: Int, Location: CLLocation) -> [Dictionary<String, String>] {
+    static func searchStores(Radius: Int, Location: CLLocation) -> Dictionary<String, String> {
         firstly {
             APIFactory.build(type: API.Foursquare).execute(Request(endpoint: "venues/search", parameters: ["ll": String(Location.coordinate.latitude) + "," + String(Location.coordinate.longitude)]))
         }.done { response in
@@ -46,12 +46,23 @@ public class Store {
         }
     }
     
-    static func getStoresAsDictionary(Stores: ResponseProtocol) -> [Dictionary<String, String>] {
-        Stores.jsonData;
-        // Iterate through JSON data of stores, convert to Dictionary
+    /*
+     *Takes the response protocal and returns a dictionary of the values inside "name" and "id"
+    */
+    static func getStoresAsDictionary(Stores: ResponseProtocol) -> Dictionary<String, String> {
+        let storeData = Stores.jsonData
+    
+        var storeDataDictionary: [String: String] = [:]
+        
+        for item in storeData["venues"].arrayValue {
+            storeDataDictionary.updateValue(item["name"].stringValue, forKey: item["id"].stringValue)
+        }
+        
+        return storeDataDictionary
     }
     
-    static func getStoreHours(Store: Dictionary<String, String>) -> [Dictionary<String, String>] {
+    
+    static func getStoreHours(Store: Dictionary<String, String>) -> Dictionary<String, String> {
         // TODO
         // Must make another API call for each Store venue to get the store hours
     }
