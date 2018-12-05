@@ -78,7 +78,7 @@ class LoginViewController: UIViewController {
         button.addTarget(self, action: #selector(self.signupAction), for: .touchUpInside)
         return button
     }()
-
+  
     /// The text field for the username.
     lazy var usernameTextField: UITextField = {
         let textField = UITextField()
@@ -146,7 +146,7 @@ class LoginViewController: UIViewController {
         print(self.usernameTextField.text!)
         print(self.passwordTextField.text!)
     }
-    
+
     /// Sign-up the user if the user has not already done so.
     @objc func signupAction(sender: UIButton) {
     }
