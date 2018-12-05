@@ -27,13 +27,16 @@ class LoginViewController: UIViewController {
     let textfieldXInset: CGFloat = 20.0
 
     /// The amount to inset the username text field from the top safe area/edge.
-    let usernameYInset: CGFloat = 75.0
+    let usernameYInset: CGFloat = 110.0
 
     /// The amount to inset the password text field from the top safe area/edge.
-    let passwordYInset: CGFloat = 150.0
-
-    /// The amount to inset the login button from the bottom safe area/edge.
-    let loginYInset: CGFloat = 20.0
+    let passwordYInset: CGFloat = 180.0
+    
+    /// The amount to inset the sign-up button from the center vertical axis.
+    let buttonXInset: CGFloat = 70.0
+    
+    /// The amount to inset the login button from the top safe area/edge.
+    let buttonYInset: CGFloat = 260.0
 
     /// The width of the login button.
     let buttonWidth: CGFloat = 96.0
@@ -57,6 +60,22 @@ class LoginViewController: UIViewController {
         button.autoSetDimension(.width, toSize: buttonWidth)
         button.autoSetDimension(.height, toSize: buttonHeight)
         button.addTarget(self, action: #selector(self.loginAction), for: .touchUpInside)
+        return button
+    }()
+
+    /// The login button.
+    lazy var signupButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Sign Up", for: .normal)
+        button.setTitleColor(.gray, for: .normal)
+        button.layer.cornerRadius = boundaryRadius
+        button.layer.borderColor = boundaryColor
+        button.layer.borderWidth = boundaryWidth
+        button.tintColor = .gray
+        button.backgroundColor = .clear
+        button.autoSetDimension(.width, toSize: buttonWidth)
+        button.autoSetDimension(.height, toSize: buttonHeight)
+        button.addTarget(self, action: #selector(self.signupAction), for: .touchUpInside)
         return button
     }()
 
@@ -95,13 +114,16 @@ class LoginViewController: UIViewController {
      the UI elements are constrained by the top and bottom edges of the superview.
      */
     func setupConstraints() {
-        loginButton.autoAlignAxis(toSuperviewAxis: .vertical)
+        loginButton.autoAlignAxis(.vertical, toSameAxisOf: self.view, withOffset: -buttonXInset)
+        signupButton.autoAlignAxis(.vertical, toSameAxisOf: self.view, withOffset: buttonXInset)
         if #available(iOS 11.0, *) {
-            loginButton.autoPinEdge(toSuperviewSafeArea: .bottom, withInset: loginYInset)
+            loginButton.autoPinEdge(toSuperviewSafeArea: .top, withInset: buttonYInset)
+            signupButton.autoPinEdge(toSuperviewSafeArea: .top, withInset: buttonYInset)
             usernameTextField.autoPinEdge(toSuperviewSafeArea: .top, withInset: usernameYInset)
             passwordTextField.autoPinEdge(toSuperviewSafeArea: .top, withInset: passwordYInset)
         } else {
-            loginButton.autoPinEdge(toSuperviewEdge: .bottom, withInset: loginYInset)
+            loginButton.autoPinEdge(toSuperviewEdge: .top, withInset: buttonYInset)
+            signupButton.autoPinEdge(toSuperviewSafeArea: .top, withInset: buttonYInset)
             usernameTextField.autoPinEdge(toSuperviewEdge: .top, withInset: usernameYInset)
             passwordTextField.autoPinEdge(toSuperviewEdge: .top, withInset: passwordYInset)
         }
@@ -116,12 +138,17 @@ class LoginViewController: UIViewController {
         self.view.addSubview(usernameTextField)
         self.view.addSubview(passwordTextField)
         self.view.addSubview(loginButton)
+        self.view.addSubview(signupButton)
     }
 
     /// Login the user after the button is pressed.
     @objc func loginAction(sender: UIButton) {
         print(self.usernameTextField.text!)
         print(self.passwordTextField.text!)
+    }
+    
+    /// Sign-up the user if the user has not already done so.
+    @objc func signupAction(sender: UIButton) {
     }
 
     /**
