@@ -149,6 +149,8 @@ class LoginViewController: UIViewController {
 
     /// Sign-up the user if the user has not already done so.
     @objc func signupAction(sender: UIButton) {
+        let signupViewController: SignupViewController = SignupViewController()
+        self.present(signupViewController, animated: true, completion: nil)
     }
 
     /**
