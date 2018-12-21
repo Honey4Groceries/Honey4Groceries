@@ -35,10 +35,12 @@ public class Store {
     public func getStoreHours() -> [String] {
         return [startTime, endTime]
     }
-    
-    /*
-     *Takes the response protocal and returns a dictionary of the values inside "name" and "id"
-    */
+
+    /// Helper function for searchStores to convert ResponseProtocol to a dictionary
+    ///
+    /// - Parameters:
+    ///     - Stores: a ResponseProtocol raw data
+    /// - Returns: [String: String]
     static func getStoresAsDictionary(Stores: ResponseProtocol) -> [String: String] {
         let storeData = Stores.jsonData
     
@@ -51,17 +53,33 @@ public class Store {
         return storeDataDictionary
     }
     
-    
-    static func getStoreHours(Store: Dictionary<String, String>) -> [String: String] {
+    /// Gets the hours of a specific store
+    ///
+    /// - Parameters:
+    ///     - StoreID: the StoreID
+    /// - Returns: [String: String]
+    static func getStoreHours(StoreID: String) -> [String: String] {
         // TODO
         // Must make another API call for each Store venue to get the store hours
         return [:]
     }
     
+    /// Helper function for getStoreHours to convert ResponseProtocol to a dictionary
+    ///
+    /// - Parameters:
+    ///     - StoreHours: Raw data of store hours
+    /// - Returns: [String: String]
     static func getStoreHoursAsDictionary(StoreHours: ResponseProtocol) -> [String: String] {
         return [:]
     }
     
+    /// Search for stores a radius around a certain given location
+    ///
+    /// - Parameters:
+    ///     - Radius: The radius around the location to search
+    ///     - Location: The location to search around
+    ///     - Limit: The maximum amount of stores we want
+    /// - Returns: [String: String]
     static func searchStores(Radius: String, Location: CLLocation, Limit: String = "10") -> [String: String] {
         
         /* build parameters */
@@ -85,6 +103,13 @@ public class Store {
         }
     }
     
+    /// Helper function for searchStores to build the parameters dictionary
+    ///
+    /// - Parameters:
+    ///     - Radius: The radius around the location to search
+    ///     - Location: The location to search around
+    ///     - Limit: The maximum amount of stores we want
+    /// - Returns: [String: String]
     private static func storeParametersBuilder(Radius: String, Location: CLLocation, Limit: String) -> [String: String] {
         
          return ["radius": Radius, "ll": String(Location.coordinate.latitude) + "," + String(Location.coordinate.longitude), "limit": Limit, "categoryID": FoursquareVenue.GroceryStore.ID]
