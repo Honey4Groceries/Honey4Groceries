@@ -39,7 +39,7 @@ public class Store {
     /*
      *Takes the response protocal and returns a dictionary of the values inside "name" and "id"
     */
-    static func getStoresAsDictionary(Stores: ResponseProtocol) -> Dictionary<String, String> {
+    static func getStoresAsDictionary(Stores: ResponseProtocol) -> [String: String] {
         let storeData = Stores.jsonData
     
         var storeDataDictionary: [String: String] = [:]
@@ -52,24 +52,41 @@ public class Store {
     }
     
     
-    static func getStoreHours(Store: Dictionary<String, String>) -> Dictionary<String, String> {
+    static func getStoreHours(Store: Dictionary<String, String>) -> [String: String] {
         // TODO
         // Must make another API call for each Store venue to get the store hours
         return [:]
     }
     
-    static func getStoreHoursAsDictionary(StoreHours: ResponseProtocol) -> Dictionary<String, String> {
+    static func getStoreHoursAsDictionary(StoreHours: ResponseProtocol) -> [String: String] {
         return [:]
     }
     
-    static func searchStores(Radius: Int, Location: CLLocation, Endpoint: String = "venues/search", Limit: String = "10", CategoryID: String = "4bf58dd8d48988d118951735") -> [Dictionary<String, String>] {
+    static func searchStores(Radius: String, Location: CLLocation, Limit: String = "10") -> [String: String] {
         
-        let parameters = ["radius": String(Radius), "ll": String(Location.coordinate.latitude) + "," + String(Location.coordinate.longitude), "limit": Limit, "categoryID": CategoryID]
+        /* build parameters */
+        let parameters = storeParametersBuilder(Radius: Radius, Location: Location, Limit: Limit)
         
-       
-        return (APIFactory.build(type: API.Foursquare)?.execute(Request(endpoint: Endpoint, parameters: parameters))
-            .map { response in
+        /* create Foursquare service with APIFactory */
+        if let foursquareService = APIFactory.build(type: API.Foursquare) {
+            
+            /* create a request object */
+            let request = Request(endpoint: FoursquareEndpoints.venueSearch.rawValue, parameters: parameters)
+            
+            /* Promise chain to get venues */
+            return (firstly {
+                foursquareService.execute(request)
+            }.compactMap { response in
                 getStoresAsDictionary(Stores: response)
             }.value)!
+        } else {
+            /* return empty dictionary if failure */
+            return [:]
+        }
+    }
+    
+    private static func storeParametersBuilder(Radius: String, Location: CLLocation, Limit: String) -> [String: String] {
+        
+         return ["radius": Radius, "ll": String(Location.coordinate.latitude) + "," + String(Location.coordinate.longitude), "limit": Limit, "categoryID": FoursquareVenue.GroceryStore.ID]
     }
 }
