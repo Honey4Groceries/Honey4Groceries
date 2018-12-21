@@ -11,8 +11,17 @@ import PureLayout
 /// The view controller for the login page.
 class LoginViewController: UIViewController {
 
+    /// The dimensions of the screen
+    let screenSize: CGRect = UIScreen.main.bounds
+
+    /// The width of the screen
+    lazy var screenWidth = screenSize.width
+
+    /// The height of the screen.
+    lazy var screenHeight = screenSize.height
+
     /// The radius of the outer boundary corners of GUI elements.
-    let boundaryRadius: CGFloat = 4.0
+    lazy var boundaryRadius: CGFloat = screenWidth * 0.01
 
     /// The width of the outer boundary of GUI elements.
     let boundaryWidth: CGFloat = 1.0
@@ -21,31 +30,31 @@ class LoginViewController: UIViewController {
     let boundaryColor = UIColor.gray.cgColor
 
     /// The height of the textfields.
-    let textfieldHeight: CGFloat = 40.0
+    lazy var textfieldHeight: CGFloat = screenHeight * 0.05
 
     /// The amount of horizontal inset for the text fields from the edges.
-    let textfieldXInset: CGFloat = 20.0
+    lazy var textfieldXInset: CGFloat = screenWidth * 0.05
 
     /// The amount to inset the username text field from the top safe area/edge.
-    let usernameYInset: CGFloat = 110.0
+    lazy var usernameYInset: CGFloat = screenHeight * 0.125
 
     /// The amount to inset the password text field from the top safe area/edge.
-    let passwordYInset: CGFloat = 180.0
-    
+    lazy var passwordYInset: CGFloat = screenHeight * 0.225
+
     /// The amount to inset the sign-up button from the center vertical axis.
-    let buttonXInset: CGFloat = 70.0
-    
+    lazy var buttonXInset: CGFloat = screenWidth * 0.10
+
     /// The amount to inset the login button from the top safe area/edge.
-    let buttonYInset: CGFloat = 260.0
+    lazy var buttonYInset: CGFloat = screenHeight * 0.33
 
     /// The width of the login button.
-    let buttonWidth: CGFloat = 96.0
+    lazy var buttonWidth: CGFloat = screenWidth * 0.3
 
     /// The height of the login button.
-    let buttonHeight: CGFloat = 32.0
+    lazy var buttonHeight: CGFloat = screenHeight * 0.045
 
     /// The vertical padding of the login button placeholder.
-    let verticalPadding: CGFloat = 10.0
+    lazy var verticalPadding: CGFloat = screenWidth * 0.03
 
     /// The login button.
     lazy var loginButton: UIButton = {
@@ -78,7 +87,7 @@ class LoginViewController: UIViewController {
         button.addTarget(self, action: #selector(self.signupAction), for: .touchUpInside)
         return button
     }()
-  
+
     /// The text field for the username.
     lazy var usernameTextField: UITextField = {
         let textField = UITextField()
@@ -114,8 +123,8 @@ class LoginViewController: UIViewController {
      the UI elements are constrained by the top and bottom edges of the superview.
      */
     func setupConstraints() {
-        loginButton.autoAlignAxis(.vertical, toSameAxisOf: self.view, withOffset: -buttonXInset)
-        signupButton.autoAlignAxis(.vertical, toSameAxisOf: self.view, withOffset: buttonXInset)
+        loginButton.autoPinEdge(toSuperviewEdge: .left, withInset: buttonXInset)
+        signupButton.autoPinEdge(toSuperviewEdge: .right, withInset: buttonXInset)
         if #available(iOS 11.0, *) {
             loginButton.autoPinEdge(toSuperviewSafeArea: .top, withInset: buttonYInset)
             signupButton.autoPinEdge(toSuperviewSafeArea: .top, withInset: buttonYInset)
