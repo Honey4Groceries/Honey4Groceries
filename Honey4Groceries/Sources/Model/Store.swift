@@ -46,9 +46,14 @@ public class Store {
     
         var storeDataDictionary: [String: String] = [:]
         
-        for item in storeData["venues"].arrayValue {
-            storeDataDictionary.updateValue(item["name"].stringValue, forKey: item["id"].stringValue)
+        print(storeData)
+        for store in storeData["response"]["venues"].arrayValue {
+            let storeName = store["name"].stringValue
+            let storeId = store["id"].stringValue
+            print(storeName, storeId)
+            storeDataDictionary[storeName] = storeId
         }
+        //print(storeDataDictionary)
         
         return storeDataDictionary
     }
@@ -113,6 +118,6 @@ public class Store {
     /// - Returns: [String: String]
     private static func storeParametersBuilder(Radius: String, Location: CLLocation, Limit: String) -> [String: String] {
         
-         return ["radius": Radius, "ll": String(Location.coordinate.latitude) + "," + String(Location.coordinate.longitude), "limit": Limit, "categoryID": FoursquareVenue.GroceryStore.ID]
+         return ["radius": Radius, "ll": String(Location.coordinate.latitude) + "," + String(Location.coordinate.longitude), "limit": Limit, "categoryId": FoursquareVenue.GroceryStore.ID]
     }
 }

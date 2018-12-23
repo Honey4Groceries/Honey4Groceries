@@ -33,8 +33,6 @@ public class APIService: APIServiceProtocol {
             // make Alamofire request. Merge config parameters and request parameters into one dictionary
             Alamofire.request(configuration.getUrl().absoluteString + request.endpoint,
                               parameters: configuration.getDefaultParameters()?.merging(request.parameters!, uniquingKeysWith: { (first, _) in first })).response { response in
-                
-                print(response.data)
                 // not using .responseJSON because the Response class wants a DefaultDataResponse
                 
                 seal.fulfill(Response(afResponse: response))
