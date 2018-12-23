@@ -80,7 +80,7 @@ public class Store {
     ///     - Location: The location to search around
     ///     - Limit: The maximum amount of stores we want
     /// - Returns: [String: String]
-    static func searchStores(Radius: String, Location: CLLocation, Limit: String = "10") -> [String: String] {
+    static func searchStores(Radius: String, Location: CLLocation, Limit: String = "10") -> [String: String]? {
         
         /* build parameters */
         let parameters = storeParametersBuilder(Radius: Radius, Location: Location, Limit: Limit)
@@ -92,14 +92,15 @@ public class Store {
             let request = Request(endpoint: FoursquareEndpoints.venueSearch.rawValue, parameters: parameters)
             
             /* Promise chain to get venues */
-            return (firstly {
+            firstly {
                 foursquareService.execute(request)
             }.compactMap { response in
                 getStoresAsDictionary(Stores: response)
-            }.value)!
+            }
+            return nil
         } else {
-            /* return empty dictionary if failure */
-            return [:]
+            /* return nil if failure */
+            return nil
         }
     }
     
