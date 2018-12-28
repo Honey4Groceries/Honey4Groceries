@@ -1,5 +1,54 @@
 PODS:
   - Alamofire (4.7.3)
+  - Firebase/Core (5.12.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 5.3.0)
+  - Firebase/CoreOnly (5.12.0):
+    - FirebaseCore (= 5.1.7)
+  - FirebaseAnalytics (5.3.0):
+    - FirebaseCore (~> 5.1)
+    - FirebaseInstanceID (~> 3.3)
+    - GoogleAppMeasurement (~> 5.3)
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
+    - GoogleUtilities/MethodSwizzler (~> 5.2)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - nanopb (~> 0.3)
+  - FirebaseCore (5.1.7):
+    - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseInstanceID (3.3.0):
+    - FirebaseCore (~> 5.1)
+    - GoogleUtilities/Environment (~> 5.3)
+    - GoogleUtilities/UserDefaults (~> 5.3)
+  - GoogleAppMeasurement (5.3.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
+    - GoogleUtilities/MethodSwizzler (~> 5.2)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - nanopb (~> 0.3)
+  - GoogleUtilities/AppDelegateSwizzler (5.3.5):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (5.3.5)
+  - GoogleUtilities/Logger (5.3.5):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (5.3.5):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (5.3.5):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (5.3.5)"
+  - GoogleUtilities/Reachability (5.3.5):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (5.3.5):
+    - GoogleUtilities/Logger
+  - nanopb (0.3.901):
+    - nanopb/decode (= 0.3.901)
+    - nanopb/encode (= 0.3.901)
+  - nanopb/decode (0.3.901)
+  - nanopb/encode (0.3.901)
   - PromiseKit (6.5.2):
     - PromiseKit/CorePromise (= 6.5.2)
     - PromiseKit/Foundation (= 6.5.2)
@@ -14,6 +63,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - Firebase/Core
   - PromiseKit (~> 6.0)
   - SwiftLint
   - SwiftyJSON (~> 4.0)
@@ -21,16 +71,30 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseInstanceID
+    - GoogleAppMeasurement
+    - GoogleUtilities
+    - nanopb
     - PromiseKit
     - SwiftLint
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Firebase: 9190018e296139d938b99521cde0c15a6e8d2946
+  FirebaseAnalytics: 63202d2665de4e6adcbdce189135255d8b5962ba
+  FirebaseCore: 027d350adc039aa5483357c6f56556f117c5170e
+  FirebaseInstanceID: e2fa4cb35ef5558c200f7f0ad8a53e212215f93e
+  GoogleAppMeasurement: 5029d78f2b438bd30ffb44e6c558b57c21622727
+  GoogleUtilities: bb6ff5a302c97a0bc9820dad775505778c5a2676
+  nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   PromiseKit: 27c1601bfb73405871b805bcb8cf7e55c4dad3db
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 3287f41c1f625c6fe8439bd5a471f7c3ede5817a
+PODFILE CHECKSUM: f12adaafb88c4f7776b7977b73489c8983c20ba6
 
 COCOAPODS: 1.5.3

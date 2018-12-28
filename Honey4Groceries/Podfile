@@ -10,5 +10,5 @@ target 'Honey4Groceries' do
   pod 'Alamofire', '~> 4.7'
   pod 'PromiseKit', '~> 6.0'
   pod 'SwiftyJSON', '~> 4.0'
-
+  pod 'Firebase/Core'
 end
