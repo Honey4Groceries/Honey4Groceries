@@ -91,6 +91,7 @@ class LoginViewController: UIViewController {
         return button
     }()
 
+
     /// The text field for the email.
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
