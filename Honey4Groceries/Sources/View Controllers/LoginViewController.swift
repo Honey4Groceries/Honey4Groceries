@@ -7,9 +7,12 @@
 
 import UIKit
 import PureLayout
+import Firebase
 
 /// The view controller for the login page.
 class LoginViewController: UIViewController {
+
+    var handle: AuthStateDidChangeListenerHandle?
 
     /// The dimensions of the screen
     let screenSize: CGRect = UIScreen.main.bounds
@@ -35,8 +38,8 @@ class LoginViewController: UIViewController {
     /// The amount of horizontal inset for the text fields from the edges.
     lazy var textfieldXInset: CGFloat = screenWidth * 0.05
 
-    /// The amount to inset the username text field from the top safe area/edge.
-    lazy var usernameYInset: CGFloat = screenHeight * 0.125
+    /// The amount to inset the email text field from the top safe area/edge.
+    lazy var emailYInset: CGFloat = screenHeight * 0.125
 
     /// The amount to inset the password text field from the top safe area/edge.
     lazy var passwordYInset: CGFloat = screenHeight * 0.225
@@ -88,10 +91,11 @@ class LoginViewController: UIViewController {
         return button
     }()
 
-    /// The text field for the username.
-    lazy var usernameTextField: UITextField = {
+
+    /// The text field for the email.
+    lazy var emailTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Username"
+        textField.placeholder = "Email"
         textField.setLeftPaddingPoints(verticalPadding)
         textField.setRightPaddingPoints(verticalPadding)
         textField.layer.cornerRadius = boundaryRadius
@@ -128,23 +132,23 @@ class LoginViewController: UIViewController {
         if #available(iOS 11.0, *) {
             loginButton.autoPinEdge(toSuperviewSafeArea: .top, withInset: buttonYInset)
             signupButton.autoPinEdge(toSuperviewSafeArea: .top, withInset: buttonYInset)
-            usernameTextField.autoPinEdge(toSuperviewSafeArea: .top, withInset: usernameYInset)
+            emailTextField.autoPinEdge(toSuperviewSafeArea: .top, withInset: emailYInset)
             passwordTextField.autoPinEdge(toSuperviewSafeArea: .top, withInset: passwordYInset)
         } else {
             loginButton.autoPinEdge(toSuperviewEdge: .top, withInset: buttonYInset)
             signupButton.autoPinEdge(toSuperviewSafeArea: .top, withInset: buttonYInset)
-            usernameTextField.autoPinEdge(toSuperviewEdge: .top, withInset: usernameYInset)
+            emailTextField.autoPinEdge(toSuperviewEdge: .top, withInset: emailYInset)
             passwordTextField.autoPinEdge(toSuperviewEdge: .top, withInset: passwordYInset)
         }
-        usernameTextField.autoPinEdge(toSuperviewEdge: .left, withInset: textfieldXInset)
-        usernameTextField.autoPinEdge(toSuperviewEdge: .right, withInset: textfieldXInset)
+        emailTextField.autoPinEdge(toSuperviewEdge: .left, withInset: textfieldXInset)
+        emailTextField.autoPinEdge(toSuperviewEdge: .right, withInset: textfieldXInset)
         passwordTextField.autoPinEdge(toSuperviewEdge: .left, withInset: textfieldXInset)
         passwordTextField.autoPinEdge(toSuperviewEdge: .right, withInset: textfieldXInset)
     }
 
     /// Adds the subviews to the current view.
     func addSubviews() {
-        self.view.addSubview(usernameTextField)
+        self.view.addSubview(emailTextField)
         self.view.addSubview(passwordTextField)
         self.view.addSubview(loginButton)
         self.view.addSubview(signupButton)
@@ -152,8 +156,12 @@ class LoginViewController: UIViewController {
 
     /// Login the user after the button is pressed.
     @objc func loginAction(sender: UIButton) {
-        print(self.usernameTextField.text!)
-        print(self.passwordTextField.text!)
+        if let email = self.emailTextField.text, let password = self.passwordTextField.text{
+            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+                print("$$$"+(user?.description ?? "nil"))
+                print(error)
+            }
+        }
     }
 
     /// Sign-up the user if the user has not already done so.
@@ -175,6 +183,15 @@ class LoginViewController: UIViewController {
 
         // Sets up the constraints for the subviews.
         self.setupConstraints()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.handle? = Auth.auth().addStateDidChangeListener { (auth, user) in
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(self.handle!)
     }
 }
 
