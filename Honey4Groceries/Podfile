@@ -11,5 +11,7 @@ target 'Honey4Groceries' do
   pod 'PromiseKit/CorePromise', '~> 6.0'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'PureLayout'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 
 end
