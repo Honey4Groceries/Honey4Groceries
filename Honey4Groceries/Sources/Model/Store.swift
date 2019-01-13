@@ -46,36 +46,14 @@ public class Store {
     
         var storeDataDictionary: [String: String] = [:]
         
-        print(storeData)
         for store in storeData["response"]["venues"].arrayValue {
             let storeName = store["name"].stringValue
             let storeId = store["id"].stringValue
             print(storeName, storeId)
             storeDataDictionary[storeName] = storeId
         }
-        //print(storeDataDictionary)
         
         return storeDataDictionary
-    }
-    
-    /// Gets the hours of a specific store
-    ///
-    /// - Parameters:
-    ///     - StoreID: the StoreID
-    /// - Returns: [String: String]
-    static func getStoreHours(StoreID: String) -> [String: String] {
-        // TODO
-        // Must make another API call for each Store venue to get the store hours
-        return [:]
-    }
-    
-    /// Helper function for getStoreHours to convert ResponseProtocol to a dictionary
-    ///
-    /// - Parameters:
-    ///     - StoreHours: Raw data of store hours
-    /// - Returns: [String: String]
-    static func getStoreHoursAsDictionary(StoreHours: ResponseProtocol) -> [String: String] {
-        return [:]
     }
     
     /// Search for stores a radius around a certain given location
@@ -86,6 +64,8 @@ public class Store {
     ///     - Limit: The maximum amount of stores we want
     /// - Returns: [String: String]
     static func searchStores(Radius: String, Location: CLLocation, Limit: String = "10") -> [String: String]? {
+        /* Store variable to contain stores to return, used to access values within promise chain */
+        var stores: [String: String]?
         
         /* build parameters */
         let parameters = storeParametersBuilder(Radius: Radius, Location: Location, Limit: Limit)
@@ -100,13 +80,11 @@ public class Store {
             firstly {
                 foursquareService.execute(request)
             }.compactMap { response in
-                getStoresAsDictionary(Stores: response)
+                stores = getStoresAsDictionary(Stores: response)
             }
-            return nil
-        } else {
-            /* return nil if failure */
-            return nil
         }
+        
+        return stores
     }
     
     /// Helper function for searchStores to build the parameters dictionary
@@ -116,8 +94,11 @@ public class Store {
     ///     - Location: The location to search around
     ///     - Limit: The maximum amount of stores we want
     /// - Returns: [String: String]
-    private static func storeParametersBuilder(Radius: String, Location: CLLocation, Limit: String) -> [String: String] {
+    private static func storeParametersBuilder(Radius: String, Location: CLLocation, Limit: String)
+        -> [String: String] {
         
-         return ["radius": Radius, "ll": String(Location.coordinate.latitude) + "," + String(Location.coordinate.longitude), "limit": Limit, "categoryId": FoursquareVenue.GroceryStore.ID]
+        return ["radius": Radius, "ll": String(Location.coordinate.latitude) + ","
+            + String(Location.coordinate.longitude), "limit": Limit, "categoryId": FoursquareVenue.GroceryStore.ID]
+        
     }
 }

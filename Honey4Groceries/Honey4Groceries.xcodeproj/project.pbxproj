@@ -26,7 +26,6 @@
 		E009E60F219B6C3700CA081E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60E219B6C3700CA081E /* SwiftyJSON.framework */; };
 		E025CC6721D5DC5700898901 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E025CC6621D5DC5700898901 /* GoogleService-Info.plist */; };
 		E0AC201A21AD2467000513CA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AC201921AD2467000513CA /* Store.swift */; };
-		E0AC201C21AD2E59000513CA /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AC201B21AD2E59000513CA /* JSONParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +51,6 @@
 		E009E60E219B6C3700CA081E /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E025CC6621D5DC5700898901 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E0AC201921AD2467000513CA /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		E0AC201B21AD2E59000513CA /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		F3F4D0D3BB1DF8CEC4CE8B0D /* Pods-Honey4Groceries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honey4Groceries.release.xcconfig"; path = "Pods/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,7 +151,6 @@
 				5AECDBA721AA10B700E75D29 /* APIConfig.swift */,
 				5AECDBAB21AA1D1400E75D29 /* APIFactory.swift */,
 				5AECDBA121AA0E1800E75D29 /* NetworkConstants.swift */,
-				E0AC201B21AD2E59000513CA /* JSONParser.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -330,7 +327,6 @@
 				5AECDBA621AA105700E75D29 /* APIServiceProtocol.swift in Sources */,
 				5A30BCC821A9D71F0032F77E /* Response.swift in Sources */,
 				E0AC201A21AD2467000513CA /* Store.swift in Sources */,
-				E0AC201C21AD2E59000513CA /* JSONParser.swift in Sources */,
 				5A30BCC621A9D2930032F77E /* ResponseProtocol.swift in Sources */,
 				5AECDBAC21AA1D1400E75D29 /* APIFactory.swift in Sources */,
 				5AECDBAA21AA175800E75D29 /* APIService.swift in Sources */,

@@ -15,7 +15,6 @@ public class Request: RequestProtocol {
     /// Parameters for request
     public var parameters: Parameters?
     
-    
     /// Initialize a new Request
     ///
     /// - Parameters:

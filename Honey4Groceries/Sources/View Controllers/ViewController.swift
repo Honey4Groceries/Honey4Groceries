@@ -12,11 +12,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let lat = CLLocationDegrees(32.8801)
-        let long = CLLocationDegrees(-117.2340)
-        let location = CLLocation(latitude: lat, longitude: long)
-        //print("hello")
-        Store.searchStores(Radius: "5000", Location: location)
         
         // Do any additional setup after loading the view, typically from a nib.
     }

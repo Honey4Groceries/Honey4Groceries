@@ -29,15 +29,30 @@ public class APIService: APIServiceProtocol {
     ///     - request: request to be executed
     /// - Returns: Promise<ResponseProtocol>
     public func execute(_ request: RequestProtocol) -> Promise<ResponseProtocol> {
+        
+        // merge default params and request params
+        let completeParams = mergeParameters(DefaultParameters: configuration.getDefaultParameters() ?? [:],
+                                             RequestParameters: request.parameters ?? [:])
+        
+        // make Alamofire request. Merge config parameters and request parameters into one dictionary
         return Promise { seal in
-            // make Alamofire request. Merge config parameters and request parameters into one dictionary
             Alamofire.request(configuration.getUrl().absoluteString + request.endpoint,
-                              parameters: configuration.getDefaultParameters()?.merging(request.parameters!, uniquingKeysWith: { (first, _) in first })).response { response in
+                              parameters: completeParams).response { response in
 
-                // not using .responseJSON because the Response class wants a DefaultDataResponse\
-                
+                // not using .responseJSON because the Response class wants a DefaultDataResponse
                 seal.fulfill(Response(afResponse: response))
             }
         }
+    }
+    
+    /// Helper function to merge default params from configuration object and params from request object
+    ///
+    /// - Parameters:
+    ///     - DefaultParameters: default parameters in the configuration object
+    ///     - RequestParameters: parameters in the Request object
+    /// - Returns: Parameters
+    private func mergeParameters(DefaultParameters: Parameters, RequestParameters: Parameters)
+        -> Parameters {
+        return DefaultParameters.merging(RequestParameters, uniquingKeysWith: { (first, _) in first})
     }
 }
