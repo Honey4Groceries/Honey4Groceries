@@ -21,6 +21,7 @@
 		5AECDBA821AA10B700E75D29 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBA721AA10B700E75D29 /* APIConfig.swift */; };
 		5AECDBAA21AA175800E75D29 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBA921AA175800E75D29 /* APIService.swift */; };
 		5AECDBAC21AA1D1400E75D29 /* APIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBAB21AA1D1400E75D29 /* APIFactory.swift */; };
+		A3E0DFA721AE087100926910 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0DFA621AE087100926910 /* LoginViewController.swift */; };
 		E009E60B219B6C3700CA081E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60A219B6C3700CA081E /* Alamofire.framework */; };
 		E009E60D219B6C3700CA081E /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60C219B6C3700CA081E /* PromiseKit.framework */; };
 		E009E60F219B6C3700CA081E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60E219B6C3700CA081E /* SwiftyJSON.framework */; };
@@ -46,6 +47,7 @@
 		5AECDBA721AA10B700E75D29 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		5AECDBA921AA175800E75D29 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		5AECDBAB21AA1D1400E75D29 /* APIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFactory.swift; sourceTree = "<group>"; };
+		A3E0DFA621AE087100926910 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E009E60A219B6C3700CA081E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E009E60C219B6C3700CA081E /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E009E60E219B6C3700CA081E /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				5A5FD6AA219A753B000B31AB /* ViewController.swift */,
+				A3E0DFA621AE087100926910 /* LoginViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -308,6 +312,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -333,6 +338,8 @@
 				5AECDB9A21AA0C6B00E75D29 /* RequestProtocol.swift in Sources */,
 				5AECDBA821AA10B700E75D29 /* APIConfig.swift in Sources */,
 				5AECDBA421AA0F9900E75D29 /* Request.swift in Sources */,
+				A3E0DFA721AE087100926910 /* LoginViewController.swift in Sources */,
+				E09E2146219B60DC00EE7FA7 /* Tester.swift in Sources */,
 				5A5FD6AB219A753B000B31AB /* ViewController.swift in Sources */,
 				5A5FD6A9219A753B000B31AB /* AppDelegate.swift in Sources */,
 			);

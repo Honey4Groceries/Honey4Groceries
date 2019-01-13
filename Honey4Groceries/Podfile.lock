@@ -58,6 +58,7 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.5.2):
     - PromiseKit/CorePromise
+  - PureLayout (3.1.4)
   - SwiftLint (0.27.0)
   - SwiftyJSON (4.2.0)
 
@@ -65,6 +66,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.7)
   - Firebase/Core
   - PromiseKit (~> 6.0)
+  - PureLayout
   - SwiftLint
   - SwiftyJSON (~> 4.0)
 
@@ -79,6 +81,7 @@ SPEC REPOS:
     - GoogleUtilities
     - nanopb
     - PromiseKit
+    - PureLayout
     - SwiftLint
     - SwiftyJSON
 
@@ -92,6 +95,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: bb6ff5a302c97a0bc9820dad775505778c5a2676
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   PromiseKit: 27c1601bfb73405871b805bcb8cf7e55c4dad3db
+  PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
