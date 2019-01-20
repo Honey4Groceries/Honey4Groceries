@@ -1,5 +1,4 @@
 import CoreLocation
-import PromiseKit
 
 class LocationService: NSObject, CLLocationManagerDelegate {
     
@@ -28,9 +27,23 @@ class LocationService: NSObject, CLLocationManagerDelegate {
 
     func getLocation() -> CLLocationCoordinate2D? {
         if CLLocationManager.locationServicesEnabled() {
-            locationManager.requestLocation()
+            switch CLLocationManager.authorizationStatus() {
+                case .notDetermined:
+                    break
+                case .restricted:
+                    break
+                case .denied:
+                    break
+                case .authorizedAlways:
+                    locationManager.requestLocation()
+                    print("success")
+                    break
+                case .authorizedWhenInUse:
+                    break
+            }
             return location
         } else {
+            print("fail")
             return nil
         }
     }

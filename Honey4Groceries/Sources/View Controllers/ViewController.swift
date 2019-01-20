@@ -7,7 +7,6 @@
 
 import UIKit
 import AVFoundation
-import PromiseKit
 
 class ViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate  {
 
