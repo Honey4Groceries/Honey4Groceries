@@ -1,14 +1,13 @@
 import CoreLocation
+import PromiseKit
 
 class LocationService: NSObject, CLLocationManagerDelegate {
     
     var location: CLLocationCoordinate2D?
-    var authorized: Bool
     var retrieved: Date?
     var locationManager: CLLocationManager
     
     public override init() {
-        authorized = false
         location = nil
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -22,11 +21,11 @@ class LocationService: NSObject, CLLocationManagerDelegate {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func requestAuth() {
         locationManager.requestAlwaysAuthorization()
     }
-    
+
     func getLocation() -> CLLocationCoordinate2D? {
         if CLLocationManager.locationServicesEnabled() {
             locationManager.requestLocation()
@@ -42,7 +41,7 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         return location
         
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         if let error = error as? CLError, error.code == .denied {
             manager.stopUpdatingLocation()
@@ -50,11 +49,10 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         }
     
     }
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
         if locations.first != nil {
             print("location:: (location)")
         }
-        
-}
+    }
 }
