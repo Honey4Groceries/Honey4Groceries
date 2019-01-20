@@ -7,17 +7,15 @@
 
 import UIKit
 import AVFoundation
+import PromiseKit
 
 class ViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate  {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    let location = LocationService()
+    override func viewDidAppear(_ animated: Bool) {
         print("Hello")
-        let location = LocationService()
-        location.requestAuth()
-        print("\(location)")
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        self.location.requestAuth()
+        print(self.location.getLocation().debugDescription)
     }
 
 }
