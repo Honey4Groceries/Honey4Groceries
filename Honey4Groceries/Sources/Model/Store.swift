@@ -11,7 +11,6 @@ import PromiseKit
 import SwiftyJSON
 
 public class Store {
-    //let searchVenuesEndpoint = "venues/search"
     private var storeID: String
     private var name: String
     private var startTime: String
@@ -63,15 +62,16 @@ public class Store {
     ///     - Location: The location to search around
     ///     - Limit: The maximum amount of stores we want
     /// - Returns: [String: String]
-    static func searchStores(Radius: String, Location: CLLocation, Limit: String = "10") -> [String: String]? {
+    static func searchStores(radius: String, location: CLLocation, limit: String = "10") -> [String: String]? {
         /* Store variable to contain stores to return, used to access values within promise chain */
         var stores: [String: String]?
         
         /* build parameters */
-        let parameters = storeParametersBuilder(Radius: Radius, Location: Location, Limit: Limit)
+        let parameters = storeParametersBuilder(radius: radius, location: location, limit: limit)
         
         /* create Foursquare service with APIFactory */
-        if let foursquareService = APIFactory.build(type: API.Foursquare) {
+        do {
+            let foursquareService = try APIFactory.build(type: API.Foursquare)
             
             /* create a request object */
             let request = Request(endpoint: FoursquareEndpoints.venueSearch.rawValue, parameters: parameters)
@@ -82,6 +82,10 @@ public class Store {
             }.compactMap { response in
                 stores = getStoresAsDictionary(Stores: response)
             }
+        } catch {
+            print("Some error message")
+            return nil
+            // or have the function throw, I don't know which is better
         }
         
         return stores
@@ -94,11 +98,11 @@ public class Store {
     ///     - Location: The location to search around
     ///     - Limit: The maximum amount of stores we want
     /// - Returns: [String: String]
-    private static func storeParametersBuilder(Radius: String, Location: CLLocation, Limit: String)
+    private static func storeParametersBuilder(radius: String, location: CLLocation, limit: String)
         -> [String: String] {
         
-        return ["radius": Radius, "ll": String(Location.coordinate.latitude) + ","
-            + String(Location.coordinate.longitude), "limit": Limit, "categoryId": FoursquareVenue.GroceryStore.ID]
+        return ["radius": radius, "ll": String(location.coordinate.latitude) + ","
+            + String(location.coordinate.longitude), "limit": limit, "categoryId": FoursquareVenue.GroceryStore.ID]
         
     }
 }

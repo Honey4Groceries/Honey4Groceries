@@ -15,8 +15,8 @@ public class APIFactory {
     /// - Parameters:
     ///     - type: type of API
     /// - Returns: APIService instance of specified API
-    public static func build(type: API) -> APIService? {
-        guard let config = APIConfigs[type] else { return nil }
+    public static func build(type: API) throws -> APIService {
+        guard let config = APIConfigs[type] else { throw APIFactoryError.invalidBuild }
         return APIService(config)
     }
     
