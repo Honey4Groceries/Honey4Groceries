@@ -14,7 +14,10 @@ class ViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate  {
     override func viewDidAppear(_ animated: Bool) {
         print("Hello")
         self.location.requestAuth()
-        print(self.location.getLocation().debugDescription)
+        self.location.requestLocation()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+            print(self.location.getLocation().debugDescription)
+        })
     }
 
 }
