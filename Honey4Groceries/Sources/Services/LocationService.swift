@@ -16,10 +16,6 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         locationManager.delegate = self
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     func requestAuth() {
         locationManager.requestAlwaysAuthorization()
     }
@@ -39,7 +35,6 @@ class LocationService: NSObject, CLLocationManagerDelegate {
             manager.stopUpdatingLocation()
             return
         }
-    
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
