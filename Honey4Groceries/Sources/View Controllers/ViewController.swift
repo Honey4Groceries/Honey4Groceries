@@ -6,18 +6,17 @@
 //
 
 import UIKit
-import AVFoundation
+import CoreLocation
 
-class ViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate  {
+class ViewController: UIViewController {
 
     let location = LocationService()
     override func viewDidAppear(_ animated: Bool) {
         print("Hello")
         self.location.requestAuth()
         self.location.requestLocation()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
-            print(self.location.getLocation().debugDescription)
+        self.location.getLocation(callback: { currentLocation in
+            print(currentLocation.debugDescription)
         })
     }
-
 }
