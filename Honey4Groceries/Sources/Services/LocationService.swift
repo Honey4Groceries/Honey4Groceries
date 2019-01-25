@@ -2,7 +2,7 @@ import CoreLocation
 
 class LocationService: NSObject, CLLocationManagerDelegate {
     
-    var location: CLLocationCoordinate2D?
+    var location: CLLocation?
     var retrieved: Date?
     var locationManager: CLLocationManager
     
@@ -11,7 +11,6 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         retrieved = Date()
-        //locationManager.requestAlwaysAuthorization()
         super.init()
         
         locationManager.delegate = self
@@ -24,35 +23,13 @@ class LocationService: NSObject, CLLocationManagerDelegate {
     func requestAuth() {
         locationManager.requestAlwaysAuthorization()
     }
-
-    func getLocation() -> CLLocationCoordinate2D? {
-        if CLLocationManager.locationServicesEnabled() {
-            switch CLLocationManager.authorizationStatus() {
-                case .notDetermined:
-                    break
-                case .restricted:
-                    break
-                case .denied:
-                    break
-                case .authorizedAlways:
-                    locationManager.requestLocation()
-                    print("success")
-                    break
-                case .authorizedWhenInUse:
-                    break
-            }
-            return location
-        } else {
-            print("fail")
-            return nil
-        }
+    
+    func requestLocation() {
+        locationManager.requestLocation()
     }
 
-    private func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) -> CLLocationCoordinate2D? {
-        let lastLocation = locations.last!
-        location = CLLocationCoordinate2DMake(lastLocation.coordinate.latitude, lastLocation.coordinate.longitude)
+    func getLocation() -> CLLocation? {
         return location
-        
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -65,7 +42,7 @@ class LocationService: NSObject, CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locations.first != nil {
-            print("location:: (location)")
+            location = locations.first
         }
     }
 }
