@@ -6,11 +6,11 @@
 //
 
 import UIKit
-import CoreLocation
 
 class ViewController: UIViewController {
 
     let location = LocationService()
+
     override func viewDidAppear(_ animated: Bool) {
         print("Hello")
         self.location.requestAuth()
