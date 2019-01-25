@@ -28,8 +28,10 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         locationManager.requestLocation()
     }
 
-    func getLocation() -> CLLocation? {
-        return location
+    func getLocation(callback:@escaping (CLLocation?) -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.seconds(1), execute: {
+            callback(self.location)
+        })
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
