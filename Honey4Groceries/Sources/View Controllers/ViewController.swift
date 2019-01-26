@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let location = LocationService()
+    let location = LocationServiceTest()
 
     override func viewDidLoad() {
         super.viewDidLoad()
