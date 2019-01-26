@@ -7,6 +7,7 @@
 
 import Foundation
 import AVFoundation
+import PromiseKit
 
 /// Protocol for services involving AVFoundation Video
 public protocol VideoProtocol {
@@ -24,6 +25,7 @@ public protocol VideoProtocol {
     
     /// Start session associated with VideoProtocol. Throws invalidStart if session
     /// is already running.
+    /// Precondition: AVCaptureDevice.authorizationStatus(for: .video) == AVAuthorizationStatus.authorized
     func startSession() throws
     
     /// Stop session associated with VideoProtocol. Throws invalidStop if session
@@ -34,12 +36,27 @@ public protocol VideoProtocol {
     /// Throws nilInput or nilOutput if it fails to get the input or output
     /// for the device.
     func sessionSetup() throws
+    
 }
 
 // Extension used here to provide default implementation of methods
 extension VideoProtocol {
     public func getInput() -> AVCaptureDeviceInput? {
-        guard let captureDevice = AVCaptureDevice.default(for: AVMediaType.video),
+        var currentAuthStatus = AVCaptureDevice.authorizationStatus(for: .video)
+        if currentAuthStatus != AVAuthorizationStatus.authorized {
+            firstly {
+                requestAuthorization(mediaType: .video)
+            }.done { auth in
+                currentAuthStatus = auth
+            }
+        }
+        
+        // Return nil if unauthorized
+        if currentAuthStatus != AVAuthorizationStatus.authorized {
+            return nil
+        }
+        
+        guard let captureDevice = AVCaptureDevice.default(for: .video),
             let input = try? AVCaptureDeviceInput(device: captureDevice)
             else { return nil }
     
@@ -48,6 +65,7 @@ extension VideoProtocol {
     
     public func startSession() throws {
         guard !session.isRunning else { throw VideoError.invalidStart }
+        
         session.startRunning()
     }
     
@@ -61,6 +79,15 @@ extension VideoProtocol {
         guard let output = getOutput() else { throw VideoError.nilOutput }
         session.addInput(input)
         session.addOutput(output)
+    }
+    
+    /// Request authorization for said mediaType and returns promise wrapping auth status
+    private func requestAuthorization(mediaType: AVMediaType) -> Guarantee<AVAuthorizationStatus> {
+        return Guarantee { seal in
+            AVCaptureDevice.requestAccess(for: mediaType) { granted in
+                seal((granted) ? AVAuthorizationStatus.authorized : AVAuthorizationStatus.denied)
+            }
+        }
     }
 }
 
