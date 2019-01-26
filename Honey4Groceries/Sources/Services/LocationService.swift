@@ -1,4 +1,5 @@
 import CoreLocation
+import PromiseKit
 
 class LocationService: NSObject, CLLocationManagerDelegate {
     
@@ -7,10 +8,10 @@ class LocationService: NSObject, CLLocationManagerDelegate {
     var locationManager: CLLocationManager
     
     public override init() {
-        location = nil
-        locationManager = CLLocationManager()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        retrieved = Date()
+        self.location = nil
+        self.locationManager = CLLocationManager()
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.retrieved = Date()
         super.init()
         
         locationManager.delegate = self
@@ -24,10 +25,13 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         locationManager.requestLocation()
     }
 
-    func getLocation(callback:@escaping (CLLocation?) -> Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.seconds(1), execute: {
-            callback(self.location)
-        })
+    func getLocation() -> Guarantee<CLLocation?> {
+        let guarantee = Guarantee<CLLocation?> {seal in
+            DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.seconds(1), execute: {
+                seal(self.location)
+            })
+        }
+        return guarantee
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
