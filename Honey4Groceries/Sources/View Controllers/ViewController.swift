@@ -9,13 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let location = LocationService()
+    let locationService = LocationService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("Hello")
-        self.location.getLocation().done { currentLocation in
+        self.locationService.getLocation().done { currentLocation in
             print(currentLocation.debugDescription)
         }
     }
