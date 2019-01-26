@@ -15,8 +15,8 @@ class ViewController: UIViewController {
         print("Hello")
         self.location.requestAuth()
         self.location.requestLocation()
-        self.location.getLocation(callback: { currentLocation in
+        self.location.getLocation().done { currentLocation in
             print(currentLocation.debugDescription)
-        })
+        }
     }
 }
