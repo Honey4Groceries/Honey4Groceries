@@ -11,7 +11,9 @@ class ViewController: UIViewController {
 
     let location = LocationService()
 
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
         print("Hello")
         self.location.getLocation().done { currentLocation in
             print(currentLocation.debugDescription)
