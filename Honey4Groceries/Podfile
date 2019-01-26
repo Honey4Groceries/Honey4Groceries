@@ -9,6 +9,7 @@ target 'Honey4Groceries' do
   pod 'SwiftLint'
   pod 'Alamofire', '~> 4.7'
   pod 'PromiseKit/CorePromise', '~> 6.0'
+  pod 'PromiseKit/CoreLocation', '~> 6.0'
   pod 'SwiftyJSON', '~> 4.0'
 
 end

@@ -1,11 +1,14 @@
 PODS:
   - Alamofire (4.7.3)
+  - PromiseKit/CoreLocation (6.5.2):
+    - PromiseKit/CorePromise
   - PromiseKit/CorePromise (6.5.2)
   - SwiftLint (0.27.0)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - PromiseKit/CoreLocation (~> 6.0)
   - PromiseKit/CorePromise (~> 6.0)
   - SwiftLint
   - SwiftyJSON (~> 4.0)
@@ -23,6 +26,6 @@ SPEC CHECKSUMS:
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: b36e846cd2455c86a1b983b3b7a0d1a4f0617d78
+PODFILE CHECKSUM: f10a65ab1c2d4fbf469c3fc153bf10be6dcc2ecb
 
 COCOAPODS: 1.5.3
