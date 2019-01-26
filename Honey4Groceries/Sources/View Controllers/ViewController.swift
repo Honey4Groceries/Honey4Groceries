@@ -13,8 +13,6 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         print("Hello")
-        self.location.requestAuth()
-        self.location.requestLocation()
         self.location.getLocation().done { currentLocation in
             print(currentLocation.debugDescription)
         }
