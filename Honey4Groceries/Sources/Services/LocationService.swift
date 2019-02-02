@@ -1,18 +1,18 @@
 import PromiseKit
 
 class LocationService {
-    func getLocation() -> Guarantee<CLLocation?> {
-        let guarantee = Guarantee<CLLocation?> {seal in
+    func getLocation() -> Promise<CLLocation?> {
+        let promise = Promise<CLLocation?> {seal in
             firstly {
                 CLLocationManager.requestAuthorization(type: .always)
-            }.then { authorizationStatus -> Promise<[CLLocation]> in
+            }.then { _ -> Promise<[CLLocation]> in
                 return CLLocationManager.requestLocation()
             }.done {currentLocation in
-                seal(currentLocation.first)
+                seal.fulfill(currentLocation.first)
             }.catch {error in
-                print("Get Location Failed!")
+                seal.reject(error)
             }
         }
-        return guarantee
+        return promise
     }
 }
