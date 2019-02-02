@@ -13,64 +13,78 @@ import UIKit
 public class BarcodeVideoService: NSObject, VideoProtocol {
 
     public var session: AVCaptureSession
-    public var previewLayer: AVCaptureVideoPreviewLayer
+    public var previewLayer: AVCaptureVideoPreviewLayer?
     
-    /// Holds string for barcode.
-    public var barcode: String = ""
+    public var onBarcodeDetected: (String?) -> Void
     
-    public var onBarcodeDetected: (String) -> Void
-    
-    private let barcodeTypes: [AVMetadataObject.ObjectType] = [
-        AVMetadataObject.ObjectType.ean8,
-        AVMetadataObject.ObjectType.ean13,
-        AVMetadataObject.ObjectType.upce
-    ]
-    
-    public init(onBarcodeDetected: @escaping (String) -> Void) {
+    public init(onBarcodeDetected: @escaping (String?) -> Void) {
         self.session = AVCaptureSession()
-        self.previewLayer = AVCaptureVideoPreviewLayer(session: session)
         self.onBarcodeDetected = onBarcodeDetected
     }
     
     public func getOutput() -> AVCaptureOutput? {
         let output = AVCaptureMetadataOutput()
-        let serialQueue = DispatchQueue(label: "BarcodeVideoQueue")
-        output.setMetadataObjectsDelegate(self, queue: serialQueue)
-        output.metadataObjectTypes = barcodeTypes
-        
         return output
     }
     
-    /// Adds previewLayer of current service as sublayer to supplied UIView.
+    /**
+    Set metatdata objects delegate for AVCaptureMetadataOutput.
+     - Parameters: output - AVCaptureMetadataOutput to set delegate for
+    */
+    private func setOutputDelegate(output: AVCaptureMetadataOutput?) {
+        if output == nil { return }
+        output?.metadataObjectTypes = output?.availableMetadataObjectTypes
+        let serialQueue = DispatchQueue(label: "BarcodeVideoQueue")
+        output?.setMetadataObjectsDelegate(self, queue: serialQueue)
+    }
+    
+    public func sessionSetup() throws {
+        guard let input = getInput() else { throw VideoError.nilInput }
+        guard let output = getOutput() else { throw VideoError.nilOutput }
+        session.addInput(input)
+        session.addOutput(output)
+        
+        setOutputDelegate(output: output as? AVCaptureMetadataOutput)
+        
+        self.previewLayer = AVCaptureVideoPreviewLayer(session: session)
+    }
+    
+    /**
+    Adds previewLayer of current service as sublayer to UIView passed in.
+     - Parameters: view - UIView to add preview sublayer to.
+    */
     public func addPreviewSublayer(view: UIView) {
-        self.previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        self.previewLayer.frame = view.bounds
-        view.layer.addSublayer(self.previewLayer)
+        self.previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        self.previewLayer?.frame = view.bounds
+        view.layer.addSublayer(self.previewLayer ?? view.layer)
     }
 }
 
 extension BarcodeVideoService: AVCaptureMetadataOutputObjectsDelegate {
-
-    private func metadataOutput(_ output: AVCaptureMetadataOutput,
-                                didOutput metadataObjects: [AVMetadataObject],
-                                from connection: AVCaptureConnection) {
+    
+    public func metadataOutput(_ output: AVCaptureMetadataOutput,
+                               didOutput metadataObjects: [AVMetadataObject],
+                               from connection: AVCaptureConnection) {
         // Check that there is actually a barcode
         if metadataObjects.count == 0 {
             return
         }
         
-        // Get the metadata object.
-        let metadataObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
-
-        self.barcode = metadataObject.stringValue ?? "undetected"
+        var barcodeObject: AVMetadataMachineReadableCodeObject?
         
-        do {
-            try self.stopSession()
-        } catch {
-            print("Error: BarcodeVideoService - Stopping uninitialized session")
+        // Iterate through metadata object and get first one that is barcode.
+        for metadataObject in metadataObjects where metadataObject is AVMetadataMachineReadableCodeObject {
+            barcodeObject = metadataObject as? AVMetadataMachineReadableCodeObject
+            break
+        }
+
+        // If no barcode is detected then just continue
+        if barcodeObject == nil {
             return
         }
         
-        self.onBarcodeDetected(barcode)
+        self.session.stopRunning()
+        
+        self.onBarcodeDetected(barcodeObject?.stringValue)
     }
 }

@@ -15,7 +15,7 @@ public protocol VideoProtocol {
     var session: AVCaptureSession { get set }
     
     /// Video Preview Layer for input of video.
-    var previewLayer: AVCaptureVideoPreviewLayer { get }
+    var previewLayer: AVCaptureVideoPreviewLayer? { get }
     
     /// Gets input for device and returns nil if it fails.
     func getInput() -> AVCaptureDeviceInput?
