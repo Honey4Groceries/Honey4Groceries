@@ -6,6 +6,7 @@ public class LocationService {
     /// Enum for different types of location errors
     public enum LocationError: Error {
         case nilOutput
+        case notAuthorized
     }
     
     /**
@@ -28,13 +29,26 @@ public class LocationService {
                 
                 /// A promise is returned with either the current location or an error
             }.done {currentLocation in
+                
+                /// Reject with nilOutput error
                 if currentLocation.first == nil {
                     seal.reject(LocationError.nilOutput)
+                    
+                /// Successfully found the location
                 } else {
                     seal.fulfill(currentLocation.first!)
                 }
             }.catch {error in
-                seal.reject(error)
+                switch error {
+                    
+                /// Pass PMKError's notAuthorized error as LocationError's notAuthorized error
+                case CLLocationManager.PMKError.notAuthorized:
+                    seal.reject(LocationError.notAuthorized)
+                    
+                /// Pass all other errors
+                default:
+                    seal.reject(error)
+                }
             }
         }
         return promise

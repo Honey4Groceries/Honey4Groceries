@@ -26,7 +26,7 @@ class ViewController: UIViewController {
             print(self.longitude as Any)
         }.catch { error in
             switch error {
-            case CLLocationManager.PMKError.notAuthorized:
+            case LocationService.LocationError.notAuthorized:
                 print("Not Authorized")
             case LocationService.LocationError.nilOutput:
                 print("Nil Output")
