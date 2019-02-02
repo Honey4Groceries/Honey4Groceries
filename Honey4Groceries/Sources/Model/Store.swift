@@ -13,14 +13,14 @@ import SwiftyJSON
 public class Store {
     private var storeID: String
     private var name: String
-    private var startTime: String
-    private var endTime: String
+    private var openTime: String
+    private var closeTime: String
     
-    public init(storeID: String, name: String, startTime: String, endTime: String) {
+    public init(storeID: String, name: String, openTime: String, closeTime: String) {
         self.storeID = storeID
         self.name = name
-        self.startTime = startTime
-        self.endTime = endTime
+        self.openTime = openTime
+        self.closeTime = closeTime
     }
     
     public func getName() -> String {
@@ -32,14 +32,15 @@ public class Store {
     }
     
     public func getStoreHours() -> [String] {
-        return [startTime, endTime]
+        return [openTime, closeTime]
     }
 
     /// Helper function for searchStores to convert ResponseProtocol to a dictionary
     ///
     /// - Parameters:
-    ///     - Stores: a ResponseProtocol raw data
+    ///     - stores: a ResponseProtocol raw data
     /// - Returns: [String: String]
+    ///     - Saves the store name and store ID as a dictionary
     static func getStoresAsDictionary(Stores: ResponseProtocol) -> [String: String] {
         let storeData = Stores.jsonData
     
@@ -58,11 +59,12 @@ public class Store {
     /// Search for stores a radius around a certain given location
     ///
     /// - Parameters:
-    ///     - Radius: The radius around the location to search
+    ///     - Radius: The radius around the location to search in meters
     ///     - Location: The location to search around
     ///     - Limit: The maximum amount of stores we want
     /// - Returns: [String: String]
-    static func searchStores(radius: String, location: CLLocation, limit: String = "10") -> [String: String]? {
+    ///     - Saves the stores and response as a dictionary
+    static func searchStores(radius: Int, location: CLLocation, limit: String = "10") -> [String: String]? {
         /* Store variable to contain stores to return, used to access values within promise chain */
         var stores: [String: String]?
         
@@ -94,14 +96,15 @@ public class Store {
     /// Helper function for searchStores to build the parameters dictionary
     ///
     /// - Parameters:
-    ///     - Radius: The radius around the location to search
+    ///     - Radius: The radius around the location to search in meters
     ///     - Location: The location to search around
     ///     - Limit: The maximum amount of stores we want
     /// - Returns: [String: String]
-    private static func storeParametersBuilder(radius: String, location: CLLocation, limit: String)
+    ///     - Creates a string dictionary of parameters
+    private static func storeParametersBuilder(radius: Int, location: CLLocation, limit: String)
         -> [String: String] {
         
-        return ["radius": radius, "ll": String(location.coordinate.latitude) + ","
+        return ["radius": String(radius), "ll": String(location.coordinate.latitude) + ","
             + String(location.coordinate.longitude), "limit": limit, "categoryId": FoursquareVenue.GroceryStore.ID]
         
     }
