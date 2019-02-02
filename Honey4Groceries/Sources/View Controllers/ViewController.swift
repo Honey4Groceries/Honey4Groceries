@@ -20,10 +20,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.locationService.getLocation().done { currentLocation in
-            self.latitude = currentLocation?.coordinate.latitude
-            self.longitude = currentLocation?.coordinate.longitude
-            print(self.latitude as Any)
-            print(self.longitude as Any)
+            if currentLocation == nil {
+                self.locationError = LocationService.LocationError.nilOutput
+            } else {
+                self.latitude = currentLocation?.coordinate.latitude
+                self.longitude = currentLocation?.coordinate.longitude
+                print(self.latitude as Any)
+                print(self.longitude as Any)
+            }
         }.catch { error in
             switch error {
             case CLLocationManager.PMKError.notAuthorized:
