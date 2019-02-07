@@ -64,7 +64,7 @@ public class Store {
     ///     - Limit: The maximum amount of stores we want
     /// - Returns: [String: String]
     ///     - Saves the stores and response as a dictionary
-    static func searchStores(radius: Int, location: CLLocation, limit: String = "10") -> [String: String]? {
+    static func searchStores(radius: Int, location: CLLocation, limit: Int = 10) -> [String: String]? {
         /* Store variable to contain stores to return, used to access values within promise chain */
         var stores: [String: String]?
         
@@ -99,13 +99,12 @@ public class Store {
     ///     - Radius: The radius around the location to search in meters
     ///     - Location: The location to search around
     ///     - Limit: The maximum amount of stores we want
-    /// - Returns: [String: String]
-    ///     - Creates a string dictionary of parameters
-    private static func storeParametersBuilder(radius: Int, location: CLLocation, limit: String)
-        -> [String: String] {
+    /// - Returns: Parameters
+    private static func storeParametersBuilder(radius: Int, location: CLLocation, limit: Int)
+        -> Parameters {
         
         return ["radius": String(radius), "ll": String(location.coordinate.latitude) + ","
-            + String(location.coordinate.longitude), "limit": limit, "categoryId": FoursquareVenue.GroceryStore.ID]
+            + String(location.coordinate.longitude), "limit": String(limit), "categoryId": FoursquareVenue.GroceryStore.ID]
         
     }
 }
