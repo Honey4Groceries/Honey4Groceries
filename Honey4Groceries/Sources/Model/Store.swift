@@ -64,12 +64,12 @@ public class Store {
     ///     - Limit: The maximum amount of stores we want
     /// - Returns: [String: String]
     ///     - Saves the stores and response as a dictionary
-    static func searchStores(radius: Int, location: CLLocation, limit: Int = 10) -> [String: String]? {
+    static func searchStores(_ radius: Int, _ location: CLLocation, limit: Int = 10) -> [String: String]? {
         /* Store variable to contain stores to return, used to access values within promise chain */
         var stores: [String: String]?
         
         /* build parameters */
-        let parameters = storeParametersBuilder(radius: radius, location: location, limit: limit)
+        let parameters = storeParametersBuilder(radius, location, limit)
         
         /* create Foursquare service with APIFactory */
         do {
@@ -100,7 +100,7 @@ public class Store {
     ///     - Location: The location to search around
     ///     - Limit: The maximum amount of stores we want
     /// - Returns: Parameters
-    private static func storeParametersBuilder(radius: Int, location: CLLocation, limit: Int)
+    private static func storeParametersBuilder(_ radius: Int, _ location: CLLocation, _ limit: Int)
         -> Parameters {
         
         return ["radius": String(radius), "ll": String(location.coordinate.latitude) + ","

@@ -22,14 +22,68 @@
 		5AECDBAA21AA175800E75D29 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBA921AA175800E75D29 /* APIService.swift */; };
 		5AECDBAC21AA1D1400E75D29 /* APIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBAB21AA1D1400E75D29 /* APIFactory.swift */; };
 		A3E0DFA721AE087100926910 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0DFA621AE087100926910 /* LoginViewController.swift */; };
+		C2BAAD06B2C81DE2D4194A93 /* Pods_ModelLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9CF13AD63710EE59A5427A /* Pods_ModelLayer.framework */; };
 		E009E60B219B6C3700CA081E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60A219B6C3700CA081E /* Alamofire.framework */; };
 		E009E60D219B6C3700CA081E /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60C219B6C3700CA081E /* PromiseKit.framework */; };
 		E009E60F219B6C3700CA081E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60E219B6C3700CA081E /* SwiftyJSON.framework */; };
 		E025CC6721D5DC5700898901 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E025CC6621D5DC5700898901 /* GoogleService-Info.plist */; };
+		E0275D4A220E412400B8A459 /* ResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A30BCC521A9D2930032F77E /* ResponseProtocol.swift */; };
+		E0275D4B220E412400B8A459 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A30BCC721A9D71F0032F77E /* Response.swift */; };
+		E0275D4C220E412400B8A459 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDB9921AA0C6B00E75D29 /* RequestProtocol.swift */; };
+		E0275D4D220E412400B8A459 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBA321AA0F9900E75D29 /* Request.swift */; };
+		E0275D4E220E412400B8A459 /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBA521AA105700E75D29 /* APIServiceProtocol.swift */; };
+		E0275D4F220E412400B8A459 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBA921AA175800E75D29 /* APIService.swift */; };
+		E0275D50220E412400B8A459 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBA721AA10B700E75D29 /* APIConfig.swift */; };
+		E0275D51220E412400B8A459 /* APIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBAB21AA1D1400E75D29 /* APIFactory.swift */; };
+		E0275D52220E412400B8A459 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBA121AA0E1800E75D29 /* NetworkConstants.swift */; };
+		E05BE741220CE7C6000B91DD /* Honey4GroceriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BE740220CE7C6000B91DD /* Honey4GroceriesTests.swift */; };
+		E05BE756220E2095000B91DD /* ModelLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E05BE74D220E2094000B91DD /* ModelLayer.framework */; };
+		E05BE75D220E2095000B91DD /* ModelLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BE75C220E2095000B91DD /* ModelLayerTests.swift */; };
+		E05BE75F220E2095000B91DD /* ModelLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = E05BE74F220E2094000B91DD /* ModelLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E05BE76B220E2109000B91DD /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AC201921AD2467000513CA /* Store.swift */; };
 		E0AC201A21AD2467000513CA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AC201921AD2467000513CA /* Store.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E05BE743220CE7C6000B91DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A5FD69D219A753B000B31AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A5FD6A4219A753B000B31AB;
+			remoteInfo = Honey4Groceries;
+		};
+		E05BE757220E2095000B91DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A5FD69D219A753B000B31AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E05BE74C220E2094000B91DD;
+			remoteInfo = ModelLayer;
+		};
+		E05BE759220E2095000B91DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A5FD69D219A753B000B31AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A5FD6A4219A753B000B31AB;
+			remoteInfo = Honey4Groceries;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E05BE767220E2095000B91DD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		126620C3CAA4000E50335566 /* Pods-ModelLayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModelLayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ModelLayer/Pods-ModelLayer.debug.xcconfig"; sourceTree = "<group>"; };
+		1B8B4BEB5B5A6DF66A76C7B1 /* Pods-ModelLayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModelLayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ModelLayer/Pods-ModelLayer.release.xcconfig"; sourceTree = "<group>"; };
 		35927C906C3059E248BA10D8 /* Pods-Honey4Groceries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honey4Groceries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries.debug.xcconfig"; sourceTree = "<group>"; };
 		3D8F1DEF9D3421F20C29970D /* Pods_Honey4Groceries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Honey4Groceries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A30BCC521A9D2930032F77E /* ResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseProtocol.swift; sourceTree = "<group>"; };
@@ -48,10 +102,20 @@
 		5AECDBA921AA175800E75D29 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		5AECDBAB21AA1D1400E75D29 /* APIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFactory.swift; sourceTree = "<group>"; };
 		A3E0DFA621AE087100926910 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AD9CF13AD63710EE59A5427A /* Pods_ModelLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ModelLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E009E60A219B6C3700CA081E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E009E60C219B6C3700CA081E /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E009E60E219B6C3700CA081E /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E025CC6621D5DC5700898901 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E05BE73E220CE7C6000B91DD /* Honey4GroceriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Honey4GroceriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E05BE740220CE7C6000B91DD /* Honey4GroceriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Honey4GroceriesTests.swift; sourceTree = "<group>"; };
+		E05BE742220CE7C6000B91DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E05BE74D220E2094000B91DD /* ModelLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ModelLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E05BE74F220E2094000B91DD /* ModelLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelLayer.h; sourceTree = "<group>"; };
+		E05BE750220E2094000B91DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E05BE755220E2095000B91DD /* ModelLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E05BE75C220E2095000B91DD /* ModelLayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLayerTests.swift; sourceTree = "<group>"; };
+		E05BE75E220E2095000B91DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0AC201921AD2467000513CA /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		F3F4D0D3BB1DF8CEC4CE8B0D /* Pods-Honey4Groceries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honey4Groceries.release.xcconfig"; path = "Pods/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +132,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E05BE73B220CE7C6000B91DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E05BE74A220E2094000B91DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2BAAD06B2C81DE2D4194A93 /* Pods_ModelLayer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E05BE752220E2095000B91DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E05BE756220E2095000B91DD /* ModelLayer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +165,7 @@
 				E009E60C219B6C3700CA081E /* PromiseKit.framework */,
 				E009E60E219B6C3700CA081E /* SwiftyJSON.framework */,
 				3D8F1DEF9D3421F20C29970D /* Pods_Honey4Groceries.framework */,
+				AD9CF13AD63710EE59A5427A /* Pods_ModelLayer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -87,6 +175,9 @@
 			children = (
 				5A7B45E9219A786500DF87DF /* Resources */,
 				5A5FD6A7219A753B000B31AB /* Sources */,
+				E05BE73F220CE7C6000B91DD /* Honey4GroceriesTests */,
+				E05BE74E220E2094000B91DD /* ModelLayer */,
+				E05BE75B220E2095000B91DD /* ModelLayerTests */,
 				5A5FD6A6219A753B000B31AB /* Products */,
 				AE87ACD2ED3C90104379C7A5 /* Pods */,
 				053551F9104D34C9DA9E2C72 /* Frameworks */,
@@ -97,6 +188,9 @@
 			isa = PBXGroup;
 			children = (
 				5A5FD6A5219A753B000B31AB /* Honey4Groceries.app */,
+				E05BE73E220CE7C6000B91DD /* Honey4GroceriesTests.xctest */,
+				E05BE74D220E2094000B91DD /* ModelLayer.framework */,
+				E05BE755220E2095000B91DD /* ModelLayerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,8 +271,37 @@
 			children = (
 				35927C906C3059E248BA10D8 /* Pods-Honey4Groceries.debug.xcconfig */,
 				F3F4D0D3BB1DF8CEC4CE8B0D /* Pods-Honey4Groceries.release.xcconfig */,
+				126620C3CAA4000E50335566 /* Pods-ModelLayer.debug.xcconfig */,
+				1B8B4BEB5B5A6DF66A76C7B1 /* Pods-ModelLayer.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E05BE73F220CE7C6000B91DD /* Honey4GroceriesTests */ = {
+			isa = PBXGroup;
+			children = (
+				E05BE740220CE7C6000B91DD /* Honey4GroceriesTests.swift */,
+				E05BE742220CE7C6000B91DD /* Info.plist */,
+			);
+			path = Honey4GroceriesTests;
+			sourceTree = "<group>";
+		};
+		E05BE74E220E2094000B91DD /* ModelLayer */ = {
+			isa = PBXGroup;
+			children = (
+				E05BE74F220E2094000B91DD /* ModelLayer.h */,
+				E05BE750220E2094000B91DD /* Info.plist */,
+			);
+			path = ModelLayer;
+			sourceTree = "<group>";
+		};
+		E05BE75B220E2095000B91DD /* ModelLayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				E05BE75C220E2095000B91DD /* ModelLayerTests.swift */,
+				E05BE75E220E2095000B91DD /* Info.plist */,
+			);
+			path = ModelLayerTests;
 			sourceTree = "<group>";
 		};
 		E0AC201821AD2430000513CA /* Model */ = {
@@ -191,6 +314,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		E05BE748220E2094000B91DD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E05BE75F220E2095000B91DD /* ModelLayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		5A5FD6A4219A753B000B31AB /* Honey4Groceries */ = {
 			isa = PBXNativeTarget;
@@ -202,6 +336,7 @@
 				5A5FD6A3219A753B000B31AB /* Resources */,
 				CA4EBA2CF2221800CAFCA5D4 /* [CP] Embed Pods Frameworks */,
 				5A7B45F0219A7B9500DF87DF /* ShellScript */,
+				E05BE767220E2095000B91DD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -212,17 +347,84 @@
 			productReference = 5A5FD6A5219A753B000B31AB /* Honey4Groceries.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E05BE73D220CE7C6000B91DD /* Honey4GroceriesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E05BE747220CE7C6000B91DD /* Build configuration list for PBXNativeTarget "Honey4GroceriesTests" */;
+			buildPhases = (
+				E05BE73A220CE7C6000B91DD /* Sources */,
+				E05BE73B220CE7C6000B91DD /* Frameworks */,
+				E05BE73C220CE7C6000B91DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E05BE744220CE7C6000B91DD /* PBXTargetDependency */,
+			);
+			name = Honey4GroceriesTests;
+			productName = Honey4GroceriesTests;
+			productReference = E05BE73E220CE7C6000B91DD /* Honey4GroceriesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E05BE74C220E2094000B91DD /* ModelLayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E05BE764220E2095000B91DD /* Build configuration list for PBXNativeTarget "ModelLayer" */;
+			buildPhases = (
+				197F7D7B4AC6EB2404B639C5 /* [CP] Check Pods Manifest.lock */,
+				E05BE748220E2094000B91DD /* Headers */,
+				E05BE749220E2094000B91DD /* Sources */,
+				E05BE74A220E2094000B91DD /* Frameworks */,
+				E05BE74B220E2094000B91DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ModelLayer;
+			productName = ModelLayer;
+			productReference = E05BE74D220E2094000B91DD /* ModelLayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E05BE754220E2095000B91DD /* ModelLayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E05BE768220E2095000B91DD /* Build configuration list for PBXNativeTarget "ModelLayerTests" */;
+			buildPhases = (
+				E05BE751220E2095000B91DD /* Sources */,
+				E05BE752220E2095000B91DD /* Frameworks */,
+				E05BE753220E2095000B91DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E05BE758220E2095000B91DD /* PBXTargetDependency */,
+				E05BE75A220E2095000B91DD /* PBXTargetDependency */,
+			);
+			name = ModelLayerTests;
+			productName = ModelLayerTests;
+			productReference = E05BE755220E2095000B91DD /* ModelLayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		5A5FD69D219A753B000B31AB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1010;
 				TargetAttributes = {
 					5A5FD6A4219A753B000B31AB = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					E05BE73D220CE7C6000B91DD = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 5A5FD6A4219A753B000B31AB;
+					};
+					E05BE74C220E2094000B91DD = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					E05BE754220E2095000B91DD = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 5A5FD6A4219A753B000B31AB;
 					};
 				};
 			};
@@ -240,6 +442,9 @@
 			projectRoot = "";
 			targets = (
 				5A5FD6A4219A753B000B31AB /* Honey4Groceries */,
+				E05BE73D220CE7C6000B91DD /* Honey4GroceriesTests */,
+				E05BE74C220E2094000B91DD /* ModelLayer */,
+				E05BE754220E2095000B91DD /* ModelLayerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -255,9 +460,52 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E05BE73C220CE7C6000B91DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E05BE74B220E2094000B91DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E05BE753220E2095000B91DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		197F7D7B4AC6EB2404B639C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ModelLayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5A7B45F0219A7B9500DF87DF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -339,13 +587,63 @@
 				5AECDBA821AA10B700E75D29 /* APIConfig.swift in Sources */,
 				5AECDBA421AA0F9900E75D29 /* Request.swift in Sources */,
 				A3E0DFA721AE087100926910 /* LoginViewController.swift in Sources */,
-				E09E2146219B60DC00EE7FA7 /* Tester.swift in Sources */,
 				5A5FD6AB219A753B000B31AB /* ViewController.swift in Sources */,
 				5A5FD6A9219A753B000B31AB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E05BE73A220CE7C6000B91DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E05BE741220CE7C6000B91DD /* Honey4GroceriesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E05BE749220E2094000B91DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0275D4E220E412400B8A459 /* APIServiceProtocol.swift in Sources */,
+				E0275D4F220E412400B8A459 /* APIService.swift in Sources */,
+				E0275D52220E412400B8A459 /* NetworkConstants.swift in Sources */,
+				E0275D50220E412400B8A459 /* APIConfig.swift in Sources */,
+				E0275D4A220E412400B8A459 /* ResponseProtocol.swift in Sources */,
+				E0275D4B220E412400B8A459 /* Response.swift in Sources */,
+				E0275D4D220E412400B8A459 /* Request.swift in Sources */,
+				E05BE76B220E2109000B91DD /* Store.swift in Sources */,
+				E0275D4C220E412400B8A459 /* RequestProtocol.swift in Sources */,
+				E0275D51220E412400B8A459 /* APIFactory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E05BE751220E2095000B91DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E05BE75D220E2095000B91DD /* ModelLayerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E05BE744220CE7C6000B91DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A5FD6A4219A753B000B31AB /* Honey4Groceries */;
+			targetProxy = E05BE743220CE7C6000B91DD /* PBXContainerItemProxy */;
+		};
+		E05BE758220E2095000B91DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E05BE74C220E2094000B91DD /* ModelLayer */;
+			targetProxy = E05BE757220E2095000B91DD /* PBXContainerItemProxy */;
+		};
+		E05BE75A220E2095000B91DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A5FD6A4219A753B000B31AB /* Honey4Groceries */;
+			targetProxy = E05BE759220E2095000B91DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5A5FD6B1219A753F000B31AB /* LaunchScreen.storyboard */ = {
@@ -479,6 +777,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 35927C906C3059E248BA10D8 /* Pods-Honey4Groceries.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JFKG4HDM34;
@@ -499,6 +798,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F3F4D0D3BB1DF8CEC4CE8B0D /* Pods-Honey4Groceries.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JFKG4HDM34;
@@ -512,6 +812,146 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E05BE745220CE7C6000B91DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Honey4GroceriesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thomastang.Honey4GroceriesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Honey4Groceries.app/Honey4Groceries";
+			};
+			name = Debug;
+		};
+		E05BE746220CE7C6000B91DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Honey4GroceriesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thomastang.Honey4GroceriesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Honey4Groceries.app/Honey4Groceries";
+			};
+			name = Release;
+		};
+		E05BE765220E2095000B91DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 126620C3CAA4000E50335566 /* Pods-ModelLayer.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = JFKG4HDM34;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ModelLayer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thomastang.ModelLayer;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E05BE766220E2095000B91DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B8B4BEB5B5A6DF66A76C7B1 /* Pods-ModelLayer.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = JFKG4HDM34;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ModelLayer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thomastang.ModelLayer;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E05BE769220E2095000B91DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ModelLayerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thomastang.ModelLayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Honey4Groceries.app/Honey4Groceries";
+			};
+			name = Debug;
+		};
+		E05BE76A220E2095000B91DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ModelLayerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thomastang.ModelLayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Honey4Groceries.app/Honey4Groceries";
 			};
 			name = Release;
 		};
@@ -532,6 +972,33 @@
 			buildConfigurations = (
 				5A5FD6B8219A753F000B31AB /* Debug */,
 				5A5FD6B9219A753F000B31AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E05BE747220CE7C6000B91DD /* Build configuration list for PBXNativeTarget "Honey4GroceriesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E05BE745220CE7C6000B91DD /* Debug */,
+				E05BE746220CE7C6000B91DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E05BE764220E2095000B91DD /* Build configuration list for PBXNativeTarget "ModelLayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E05BE765220E2095000B91DD /* Debug */,
+				E05BE766220E2095000B91DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E05BE768220E2095000B91DD /* Build configuration list for PBXNativeTarget "ModelLayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E05BE769220E2095000B91DD /* Debug */,
+				E05BE76A220E2095000B91DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

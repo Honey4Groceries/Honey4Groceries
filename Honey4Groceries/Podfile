@@ -12,5 +12,16 @@ target 'Honey4Groceries' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'Firebase/Core'
   pod 'PureLayout'
+end
 
+target 'ModelLayer' do
+
+  use_frameworks!
+
+  # Podes for ModelLayer
+  pod 'Alamofire', '~> 4.7'
+  pod 'PromiseKit', '~> 6.0'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'Firebase/Core'
+  pod 'PureLayout'
 end
