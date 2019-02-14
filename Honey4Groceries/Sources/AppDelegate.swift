@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let homeViewController = LoginViewController()
         window!.rootViewController = homeViewController
         window!.makeKeyAndVisible()
+        Store.searchStores(5000, CLLocation(latitude: 32.8801, longitude: -117.2340))
         return true
     }
 

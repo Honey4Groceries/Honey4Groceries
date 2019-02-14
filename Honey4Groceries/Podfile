@@ -25,3 +25,10 @@ target 'ModelLayer' do
   pod 'Firebase/Core'
   pod 'PureLayout'
 end
+
+target 'ModelLayerTests' do
+  use_frameworks!
+
+  pod 'PromiseKit', '~> 6.0'
+end
+

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		186711B6351E5EFB52C9BA97 /* Pods_Honey4Groceries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D8F1DEF9D3421F20C29970D /* Pods_Honey4Groceries.framework */; };
+		3C395C79285902742393983F /* Pods_ModelLayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38AEFBD9F0C3A3285ABB40A7 /* Pods_ModelLayerTests.framework */; };
 		5A30BCC621A9D2930032F77E /* ResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A30BCC521A9D2930032F77E /* ResponseProtocol.swift */; };
 		5A30BCC821A9D71F0032F77E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A30BCC721A9D71F0032F77E /* Response.swift */; };
 		5A5FD6A9219A753B000B31AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5FD6A8219A753B000B31AB /* AppDelegate.swift */; };
@@ -85,7 +86,9 @@
 		126620C3CAA4000E50335566 /* Pods-ModelLayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModelLayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ModelLayer/Pods-ModelLayer.debug.xcconfig"; sourceTree = "<group>"; };
 		1B8B4BEB5B5A6DF66A76C7B1 /* Pods-ModelLayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModelLayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ModelLayer/Pods-ModelLayer.release.xcconfig"; sourceTree = "<group>"; };
 		35927C906C3059E248BA10D8 /* Pods-Honey4Groceries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honey4Groceries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries.debug.xcconfig"; sourceTree = "<group>"; };
+		38AEFBD9F0C3A3285ABB40A7 /* Pods_ModelLayerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ModelLayerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8F1DEF9D3421F20C29970D /* Pods_Honey4Groceries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Honey4Groceries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C2BD60A508E9123D79285D1 /* Pods-ModelLayerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModelLayerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ModelLayerTests/Pods-ModelLayerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A30BCC521A9D2930032F77E /* ResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseProtocol.swift; sourceTree = "<group>"; };
 		5A30BCC721A9D71F0032F77E /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		5A5FD6A5219A753B000B31AB /* Honey4Groceries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Honey4Groceries.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +104,7 @@
 		5AECDBA721AA10B700E75D29 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		5AECDBA921AA175800E75D29 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		5AECDBAB21AA1D1400E75D29 /* APIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFactory.swift; sourceTree = "<group>"; };
+		959F588A1291BA12CCB4FDEF /* Pods-ModelLayerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModelLayerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ModelLayerTests/Pods-ModelLayerTests.release.xcconfig"; sourceTree = "<group>"; };
 		A3E0DFA621AE087100926910 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AD9CF13AD63710EE59A5427A /* Pods_ModelLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ModelLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E009E60A219B6C3700CA081E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E05BE756220E2095000B91DD /* ModelLayer.framework in Frameworks */,
+				3C395C79285902742393983F /* Pods_ModelLayerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +171,7 @@
 				E009E60E219B6C3700CA081E /* SwiftyJSON.framework */,
 				3D8F1DEF9D3421F20C29970D /* Pods_Honey4Groceries.framework */,
 				AD9CF13AD63710EE59A5427A /* Pods_ModelLayer.framework */,
+				38AEFBD9F0C3A3285ABB40A7 /* Pods_ModelLayerTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -273,6 +279,8 @@
 				F3F4D0D3BB1DF8CEC4CE8B0D /* Pods-Honey4Groceries.release.xcconfig */,
 				126620C3CAA4000E50335566 /* Pods-ModelLayer.debug.xcconfig */,
 				1B8B4BEB5B5A6DF66A76C7B1 /* Pods-ModelLayer.release.xcconfig */,
+				4C2BD60A508E9123D79285D1 /* Pods-ModelLayerTests.debug.xcconfig */,
+				959F588A1291BA12CCB4FDEF /* Pods-ModelLayerTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -388,9 +396,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E05BE768220E2095000B91DD /* Build configuration list for PBXNativeTarget "ModelLayerTests" */;
 			buildPhases = (
+				56B2E7CF5A17875C9E024327 /* [CP] Check Pods Manifest.lock */,
 				E05BE751220E2095000B91DD /* Sources */,
 				E05BE752220E2095000B91DD /* Frameworks */,
 				E05BE753220E2095000B91DD /* Resources */,
+				D60C5EC409180313201B7558 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -506,6 +516,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		56B2E7CF5A17875C9E024327 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ModelLayerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5A7B45F0219A7B9500DF87DF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -567,6 +599,38 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D60C5EC409180313201B7558 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ModelLayerTests/Pods-ModelLayerTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ModelLayerTests/Pods-ModelLayerTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -917,6 +981,7 @@
 		};
 		E05BE769220E2095000B91DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C2BD60A508E9123D79285D1 /* Pods-ModelLayerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -937,6 +1002,7 @@
 		};
 		E05BE76A220E2095000B91DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 959F588A1291BA12CCB4FDEF /* Pods-ModelLayerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

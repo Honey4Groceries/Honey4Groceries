@@ -7,6 +7,8 @@
 
 import XCTest
 import CoreLocation
+import Foundation
+import PromiseKit
 @testable import ModelLayer
 
 class ModelLayerTests: XCTestCase {
@@ -32,15 +34,17 @@ class ModelLayerTests: XCTestCase {
     }
     
     func testSearchStoresReturnsDictionaryOfStores() {
-        var stores: [String: String]?
+        //var stores: [String: String]?
         let UCSDLocation = CLLocation(latitude: 32.8801, longitude: -117.2340)
         
-        stores = Store.searchStores(200, UCSDLocation)
-        XCTAssert(stores != nil)
-        for (storeName, storeID) in stores! {
-            XCTAssert(storeName != "")
-            XCTAssert(storeID != "")
+        firstly {
+            Store.searchStores(5000, UCSDLocation)
+        }.map { stores in
+            XCTAssertTrue(stores != nil)
+            for (storeName, storeID) in stores! {
+                XCTAssert(storeName != "")
+                XCTAssert(storeID != "")
+            }
         }
     }
-
 }

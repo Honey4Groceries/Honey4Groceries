@@ -9,6 +9,7 @@ import UIKit
 import CoreLocation
 import PromiseKit
 import SwiftyJSON
+import Foundation
 
 public class Store {
     private var storeID: String
@@ -49,10 +50,10 @@ public class Store {
         for store in storeData["response"]["venues"].arrayValue {
             let storeName = store["name"].stringValue
             let storeId = store["id"].stringValue
-            print(storeName, storeId)
+            //print(storeName, storeId)
             storeDataDictionary[storeName] = storeId
         }
-        
+        print(storeDataDictionary)
         return storeDataDictionary
     }
     
@@ -64,7 +65,7 @@ public class Store {
     ///     - Limit: The maximum amount of stores we want
     /// - Returns: [String: String]
     ///     - Saves the stores and response as a dictionary
-    static func searchStores(_ radius: Int, _ location: CLLocation, limit: Int = 10) -> [String: String]? {
+    static func searchStores(_ radius: Int, _ location: CLLocation, limit: Int = 10) -> Promise<[String: String]?> {
         /* Store variable to contain stores to return, used to access values within promise chain */
         var stores: [String: String]?
         
@@ -79,18 +80,17 @@ public class Store {
             let request = Request(endpoint: FoursquareEndpoints.venueSearch.rawValue, parameters: parameters)
             
             /* Promise chain to get venues */
-            firstly {
+            return firstly { 
                 foursquareService.execute(request)
             }.compactMap { response in
-                stores = getStoresAsDictionary(Stores: response)
+                getStoresAsDictionary(Stores: response)
             }
+            //print(stores)
         } catch {
             print("Some error message")
-            return nil
+            return Promise(error: error)
             // or have the function throw, I don't know which is better
         }
-        
-        return stores
     }
     
     /// Helper function for searchStores to build the parameters dictionary
