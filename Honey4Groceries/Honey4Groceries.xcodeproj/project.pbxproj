@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		186711B6351E5EFB52C9BA97 /* Pods_Honey4Groceries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D8F1DEF9D3421F20C29970D /* Pods_Honey4Groceries.framework */; };
+		5A26D7E52218B274001566EB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26D7E42218B274001566EB /* Item.swift */; };
+		5A26D7E72218B317001566EB /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26D7E62218B317001566EB /* ListModel.swift */; };
 		5A5FD6A9219A753B000B31AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5FD6A8219A753B000B31AB /* AppDelegate.swift */; };
 		5A5FD6AB219A753B000B31AB /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5FD6AA219A753B000B31AB /* ListViewController.swift */; };
 		5A5FD6B0219A753F000B31AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A5FD6AF219A753F000B31AB /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		35927C906C3059E248BA10D8 /* Pods-Honey4Groceries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honey4Groceries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries.debug.xcconfig"; sourceTree = "<group>"; };
 		3D8F1DEF9D3421F20C29970D /* Pods_Honey4Groceries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Honey4Groceries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A26D7E42218B274001566EB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		5A26D7E62218B317001566EB /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		5A5FD6A5219A753B000B31AB /* Honey4Groceries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Honey4Groceries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5FD6A8219A753B000B31AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A5FD6AA219A753B000B31AB /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 				5A5FD6A8219A753B000B31AB /* AppDelegate.swift */,
 				5A7B45EC219A7A8400DF87DF /* View Models */,
 				5A7B45EB219A7A7100DF87DF /* View Controllers */,
+				5A26D7E42218B274001566EB /* Item.swift */,
+				5A26D7E62218B317001566EB /* ListModel.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -286,10 +292,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A26D7E72218B317001566EB /* ListModel.swift in Sources */,
 				A3E0DFA721AE087100926910 /* LoginViewController.swift in Sources */,
 				E09E2146219B60DC00EE7FA7 /* Tester.swift in Sources */,
 				5AB6B4762210DE5800A42D8A /* ItemPickerDelegate+DS.swift in Sources */,
 				5A5FD6AB219A753B000B31AB /* ListViewController.swift in Sources */,
+				5A26D7E52218B274001566EB /* Item.swift in Sources */,
 				5A5FD6A9219A753B000B31AB /* AppDelegate.swift in Sources */,
 				5AB6B4742210DD8F00A42D8A /* ItemCell.swift in Sources */,
 				5AB6B4782210DF7A00A42D8A /* ListTableViewDelegate+DS.swift in Sources */,

@@ -15,7 +15,7 @@ class ItemCell: UITableViewCell {
         return pickerView
     }()
     
-    var nameLabel: UILabel = {
+    lazy var nameLabel: UILabel = {
         let label = UILabel()
         return label
     }()
@@ -44,8 +44,6 @@ class ItemCell: UITableViewCell {
     }
     
     func initialize() {
-        self.nameLabel = UILabel()
-        self.picker = UIPickerView()
         
         self.pickerDelegate = ItemPickerDelegate()
         self.pickerDataSource = ItemPickerDataSource()
