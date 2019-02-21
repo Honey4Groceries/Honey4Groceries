@@ -21,6 +21,7 @@
 		5AECDBA821AA10B700E75D29 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBA721AA10B700E75D29 /* APIConfig.swift */; };
 		5AECDBAA21AA175800E75D29 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBA921AA175800E75D29 /* APIService.swift */; };
 		5AECDBAC21AA1D1400E75D29 /* APIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBAB21AA1D1400E75D29 /* APIFactory.swift */; };
+		A36B9F7422064DA400066276 /* BarcodeItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36B9F7322064DA400066276 /* BarcodeItems.swift */; };
 		A3E0DFA721AE087100926910 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0DFA621AE087100926910 /* LoginViewController.swift */; };
 		E009E60B219B6C3700CA081E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60A219B6C3700CA081E /* Alamofire.framework */; };
 		E009E60D219B6C3700CA081E /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60C219B6C3700CA081E /* PromiseKit.framework */; };
@@ -47,6 +48,7 @@
 		5AECDBA721AA10B700E75D29 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		5AECDBA921AA175800E75D29 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		5AECDBAB21AA1D1400E75D29 /* APIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFactory.swift; sourceTree = "<group>"; };
+		A36B9F7322064DA400066276 /* BarcodeItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeItems.swift; sourceTree = "<group>"; };
 		A3E0DFA621AE087100926910 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E009E60A219B6C3700CA081E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E009E60C219B6C3700CA081E /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				E0AC201921AD2467000513CA /* Store.swift */,
+				A36B9F7322064DA400066276 /* BarcodeItems.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A36B9F7422064DA400066276 /* BarcodeItems.swift in Sources */,
 				5AECDBA221AA0E1800E75D29 /* NetworkConstants.swift in Sources */,
 				5AECDBA621AA105700E75D29 /* APIServiceProtocol.swift in Sources */,
 				5A30BCC821A9D71F0032F77E /* Response.swift in Sources */,
@@ -339,7 +343,6 @@
 				5AECDBA821AA10B700E75D29 /* APIConfig.swift in Sources */,
 				5AECDBA421AA0F9900E75D29 /* Request.swift in Sources */,
 				A3E0DFA721AE087100926910 /* LoginViewController.swift in Sources */,
-				E09E2146219B60DC00EE7FA7 /* Tester.swift in Sources */,
 				5A5FD6AB219A753B000B31AB /* ViewController.swift in Sources */,
 				5A5FD6A9219A753B000B31AB /* AppDelegate.swift in Sources */,
 			);

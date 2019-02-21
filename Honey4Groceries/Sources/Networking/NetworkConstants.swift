@@ -13,13 +13,13 @@ public typealias Parameters = [String: String]
 public enum API: String {
     case Firebase
     case Foursquare
-    case Barcode
+    case Chomp
     
     var name: String {
         switch self {
         case .Firebase: return "Firebase"
         case .Foursquare: return "Foursquare"
-        case .Barcode: return "Barcode"
+        case .Chomp: return "Chomp"
         }
     }
 }
@@ -38,9 +38,24 @@ public enum FoursquareVenue: String {
     }
 }
 
+public enum ChompEndpoints: String {
+    case itemBarcodeSearch = "product-code.php"
+}
+
+public enum ChompItem: String {
+    case Item
+    var Barcode: String {
+        switch self {
+        case.Item: return "0842234000988"
+        }
+    }
+}
+
 public let APIConfigs: [API: APIConfig] = [
     API.Foursquare: APIConfig(name: API.Foursquare.name, base: FoursquareBaseURL, defaultParameters:
-        FoursquareDefaultParameters)!]
+        FoursquareDefaultParameters)!,
+    API.Chomp: APIConfig(name: API.Chomp.name, base: ChompBaseURL, defaultParameters: ChompDefaultParameters)!
+]
 
 private let FoursquareBaseURL = "https://api.foursquare.com/v2/"
 //private let FourSquareVenueSearchEndpoint = "venues/search"
@@ -52,6 +67,12 @@ private let FoursquareDefaultParameters = [
     "client_id": FoursquareClientID,
     "client_secret": FoursquareClientSecret,
     "v": FoursquareVersion
+]
+
+private let ChompBaseURL = "https://chompthis.com/api/"
+private let ChompToken = "HngTotbRGkL8tJVMA"
+private let ChompDefaultParameters = [
+    "token": ChompToken
 ]
 
 /// Enum for handling results of requests
