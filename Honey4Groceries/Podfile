@@ -8,8 +8,9 @@ target 'Honey4Groceries' do
   # Pods for Honey4Groceries
   pod 'SwiftLint'
   pod 'Alamofire', '~> 4.7'
-  pod 'PromiseKit/CorePromise', '~> 6.0'
+  pod 'PromiseKit', '~> 6.0'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'Firebase/Core'
   pod 'PureLayout'
 
 end
