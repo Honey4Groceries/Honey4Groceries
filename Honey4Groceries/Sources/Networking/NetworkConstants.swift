@@ -40,7 +40,9 @@ public enum FoursquareVenue: String {
 
 public let APIConfigs: [API: APIConfig] = [
     API.Foursquare: APIConfig(name: API.Foursquare.name, base: FoursquareBaseURL, defaultParameters:
-        FoursquareDefaultParameters)!]
+        FoursquareDefaultParameters)!,
+    API.Firebase: APIConfig(name: API.Firebase.name, base: FirebaseBaseURL)!
+]
 
 private let FoursquareBaseURL = "https://api.foursquare.com/v2/"
 //private let FourSquareVenueSearchEndpoint = "venues/search"
@@ -53,6 +55,15 @@ private let FoursquareDefaultParameters = [
     "client_secret": FoursquareClientSecret,
     "v": FoursquareVersion
 ]
+
+public enum FirebaseEndpoints: String {
+    case product = "products/"
+}
+
+public let FirebaseBaseURL = "https://honey4groceries.firebaseio.com/"
+
+public let FirebaseStoreEndPoint = "stores/"
+public let FirebaseStoreProducts = "products/"
 
 /// Enum for handling results of requests
 public enum Result {
