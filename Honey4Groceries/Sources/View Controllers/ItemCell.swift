@@ -9,9 +9,11 @@ import UIKit
 import PureLayout
 
 class ItemCell: UITableViewCell {
-
-    lazy var picker: UIPickerView = {
-        let pickerView = UIPickerView()
+    
+    var item: Item?
+    
+    lazy var picker: ItemPicker = {
+        let pickerView = ItemPicker(item: item!)
         return pickerView
     }()
     

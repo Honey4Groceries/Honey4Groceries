@@ -15,6 +15,13 @@ class ItemPickerDelegate: NSObject, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return quantitySelection[row].description
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let itemPickerView = pickerView as! ItemPicker
+        print(itemPickerView.item!.name)
+        print(quantitySelection[row])
+        print(pickerView.selectedRow(inComponent: component))
+    }
 }
 
 class ItemPickerDataSource: NSObject, UIPickerViewDataSource {
