@@ -17,12 +17,7 @@
 		5AB6B4742210DD8F00A42D8A /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6B4732210DD8F00A42D8A /* ItemCell.swift */; };
 		5AB6B4762210DE5800A42D8A /* ItemPickerDelegate+DS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6B4752210DE5800A42D8A /* ItemPickerDelegate+DS.swift */; };
 		5AB6B4782210DF7A00A42D8A /* ListTableViewDelegate+DS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6B4772210DF7A00A42D8A /* ListTableViewDelegate+DS.swift */; };
-		A314479A2228992D00D35599 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31447912228992D00D35599 /* Observable.swift */; };
-		A314479B2228992D00D35599 /* UIControls+Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31447922228992D00D35599 /* UIControls+Bindable.swift */; };
-		A314479C2228992D00D35599 /* BlockBasedSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = A31447962228992D00D35599 /* BlockBasedSelector.m */; };
-		A314479D2228992D00D35599 /* BlockBasedSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31447972228992D00D35599 /* BlockBasedSelector.swift */; };
-		A314479E2228992D00D35599 /* NSObject+Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31447982228992D00D35599 /* NSObject+Observable.swift */; };
-		A314479F2228992D00D35599 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31447992228992D00D35599 /* Bindable.swift */; };
+		A363B71B222B49AA00C6930E /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363B71A222B49AA00C6930E /* PickerViewModel.swift */; };
 		A3E0DFA721AE087100926910 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0DFA621AE087100926910 /* LoginViewController.swift */; };
 		E009E60B219B6C3700CA081E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60A219B6C3700CA081E /* Alamofire.framework */; };
 		E009E60D219B6C3700CA081E /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60C219B6C3700CA081E /* PromiseKit.framework */; };
@@ -44,14 +39,7 @@
 		5AB6B4732210DD8F00A42D8A /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		5AB6B4752210DE5800A42D8A /* ItemPickerDelegate+DS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemPickerDelegate+DS.swift"; sourceTree = "<group>"; };
 		5AB6B4772210DF7A00A42D8A /* ListTableViewDelegate+DS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListTableViewDelegate+DS.swift"; sourceTree = "<group>"; };
-		A31447912228992D00D35599 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		A31447922228992D00D35599 /* UIControls+Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControls+Bindable.swift"; sourceTree = "<group>"; };
-		A31447932228992D00D35599 /* SimpleTwoWayBindings-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleTwoWayBindings-Bridging-Header.h"; sourceTree = "<group>"; };
-		A31447952228992D00D35599 /* BlockBasedSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockBasedSelector.h; sourceTree = "<group>"; };
-		A31447962228992D00D35599 /* BlockBasedSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockBasedSelector.m; sourceTree = "<group>"; };
-		A31447972228992D00D35599 /* BlockBasedSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockBasedSelector.swift; sourceTree = "<group>"; };
-		A31447982228992D00D35599 /* NSObject+Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Observable.swift"; sourceTree = "<group>"; };
-		A31447992228992D00D35599 /* Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		A363B71A222B49AA00C6930E /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
 		A3E0DFA621AE087100926910 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E009E60A219B6C3700CA081E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E009E60C219B6C3700CA081E /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,12 +120,6 @@
 		5A7B45EB219A7A7100DF87DF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A31447942228992D00D35599 /* BlockBasedSelector */,
-				A31447992228992D00D35599 /* Bindable.swift */,
-				A31447982228992D00D35599 /* NSObject+Observable.swift */,
-				A31447912228992D00D35599 /* Observable.swift */,
-				A31447932228992D00D35599 /* SimpleTwoWayBindings-Bridging-Header.h */,
-				A31447922228992D00D35599 /* UIControls+Bindable.swift */,
 				5A5FD6AA219A753B000B31AB /* ListViewController.swift */,
 				A3E0DFA621AE087100926910 /* LoginViewController.swift */,
 				5AB6B4732210DD8F00A42D8A /* ItemCell.swift */,
@@ -150,6 +132,7 @@
 			children = (
 				5AB6B4752210DE5800A42D8A /* ItemPickerDelegate+DS.swift */,
 				5AB6B4772210DF7A00A42D8A /* ListTableViewDelegate+DS.swift */,
+				A363B71A222B49AA00C6930E /* PickerViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -167,16 +150,6 @@
 			children = (
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		A31447942228992D00D35599 /* BlockBasedSelector */ = {
-			isa = PBXGroup;
-			children = (
-				A31447952228992D00D35599 /* BlockBasedSelector.h */,
-				A31447962228992D00D35599 /* BlockBasedSelector.m */,
-				A31447972228992D00D35599 /* BlockBasedSelector.swift */,
-			);
-			path = BlockBasedSelector;
 			sourceTree = "<group>";
 		};
 		AE87ACD2ED3C90104379C7A5 /* Pods */ = {
@@ -299,15 +272,21 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bond/Bond.framework",
+				"${BUILT_PRODUCTS_DIR}/Differ/Differ.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveKit/ReactiveKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bond.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differ.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,18 +301,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A314479D2228992D00D35599 /* BlockBasedSelector.swift in Sources */,
 				5A26D7E72218B317001566EB /* ListModel.swift in Sources */,
 				A3E0DFA721AE087100926910 /* LoginViewController.swift in Sources */,
+				A363B71B222B49AA00C6930E /* PickerViewModel.swift in Sources */,
 				E09E2146219B60DC00EE7FA7 /* Tester.swift in Sources */,
 				5AB6B4762210DE5800A42D8A /* ItemPickerDelegate+DS.swift in Sources */,
-				A314479F2228992D00D35599 /* Bindable.swift in Sources */,
 				5A5FD6AB219A753B000B31AB /* ListViewController.swift in Sources */,
-				A314479B2228992D00D35599 /* UIControls+Bindable.swift in Sources */,
-				A314479C2228992D00D35599 /* BlockBasedSelector.m in Sources */,
-				A314479E2228992D00D35599 /* NSObject+Observable.swift in Sources */,
 				5A26D7E52218B274001566EB /* Item.swift in Sources */,
-				A314479A2228992D00D35599 /* Observable.swift in Sources */,
 				5A5FD6A9219A753B000B31AB /* AppDelegate.swift in Sources */,
 				5AB6B4742210DD8F00A42D8A /* ItemCell.swift in Sources */,
 				5AB6B4782210DF7A00A42D8A /* ListTableViewDelegate+DS.swift in Sources */,

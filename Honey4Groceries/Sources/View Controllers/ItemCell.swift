@@ -7,6 +7,8 @@
 
 import UIKit
 import PureLayout
+import Bond
+import ReactiveKit
 
 class ItemCell: UITableViewCell {
     
@@ -50,7 +52,7 @@ class ItemCell: UITableViewCell {
         
         contentView.addSubview(picker)
         contentView.addSubview(nameLabel)
-        
+                
         nameLabel.autoCenterInSuperview()
         picker.autoPinEdge(toSuperviewEdge: .right, withInset: UIScreen.main.bounds.width * 0.1)
         picker.autoMatch(.height, to: .height, of: self.contentView, withMultiplier: 0.7)
