@@ -17,8 +17,8 @@ class ItemPickerDelegate: NSObject, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(quantitySelection[row])
-        print(pickerView.selectedRow(inComponent: component))
+        // print(quantitySelection[row])
+        // print(pickerView.selectedRow(inComponent: component))
     }
 }
 

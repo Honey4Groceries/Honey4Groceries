@@ -11,6 +11,11 @@ class Item: NSObject {
     public var name: String
     public var quantity: Int
     
+    override init() {
+        self.name = ""
+        self.quantity = 0
+    }
+    
     init(name: String, quantity: Int) {
         self.name = name
         self.quantity = quantity

@@ -22,6 +22,11 @@ class ItemCell: UITableViewCell {
         return label
     }()
     
+    lazy var item: Item = {
+        let groceryItem = Item()
+        return groceryItem
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.initialize()
@@ -52,7 +57,12 @@ class ItemCell: UITableViewCell {
         
         contentView.addSubview(picker)
         contentView.addSubview(nameLabel)
-                
+        
+        self.picker.reactive.selectedRow.observeNext { (row, component) in
+            print(self.nameLabel.text)
+            print(row + 1)
+        }
+        
         nameLabel.autoCenterInSuperview()
         picker.autoPinEdge(toSuperviewEdge: .right, withInset: UIScreen.main.bounds.width * 0.1)
         picker.autoMatch(.height, to: .height, of: self.contentView, withMultiplier: 0.7)

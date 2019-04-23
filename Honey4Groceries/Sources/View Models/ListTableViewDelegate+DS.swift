@@ -9,6 +9,10 @@ import UIKit
 import Foundation
 
 fileprivate let data = ["CSE 12", "CSE 15L", "MATH 109", "ANTH 23"]
+fileprivate let items = [Item(name: "CSE 12", quantity: 0),
+                         Item(name: "CSE 15L", quantity: 0),
+                         Item(name: "MATH 109", quantity: 0),
+                         Item(name: "ANTH 23", quantity: 0)]
 let listModel = ListModel()
 
 class ListTableViewDelegate: NSObject, UITableViewDelegate {
@@ -24,5 +28,7 @@ class ListTableViewDataSource: NSObject, UITableViewDataSource {
         let itemCell = ItemCell()
         itemCell.nameLabel.text = data[indexPath.row]
         return itemCell
+        // Item cell: instance var - item
+        
     }
 }
