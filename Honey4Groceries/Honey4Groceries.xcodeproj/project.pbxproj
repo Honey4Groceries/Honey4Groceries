@@ -12,6 +12,10 @@
 		5A5FD6AB219A753B000B31AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5FD6AA219A753B000B31AB /* ViewController.swift */; };
 		5A5FD6B0219A753F000B31AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A5FD6AF219A753F000B31AB /* Assets.xcassets */; };
 		5A5FD6B3219A753F000B31AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5FD6B1219A753F000B31AB /* LaunchScreen.storyboard */; };
+		A324A7DD2272927B007E790B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324A7DC2272927B007E790B /* User.swift */; };
+		A325CCA522729A060074F70D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A325CCA422729A060074F70D /* LoginView.swift */; };
+		A325CCA72272A28E0074F70D /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A325CCA62272A28E0074F70D /* SignupView.swift */; };
+		A3C5A506226E9E1100926FE0 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5A505226E9E1100926FE0 /* UserViewModel.swift */; };
 		A3E0DFA721AE087100926910 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0DFA621AE087100926910 /* LoginViewController.swift */; };
 		E009E60B219B6C3700CA081E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60A219B6C3700CA081E /* Alamofire.framework */; };
 		E009E60D219B6C3700CA081E /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60C219B6C3700CA081E /* PromiseKit.framework */; };
@@ -28,6 +32,10 @@
 		5A5FD6AF219A753F000B31AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A5FD6B2219A753F000B31AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A5FD6B4219A753F000B31AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A324A7DC2272927B007E790B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A325CCA422729A060074F70D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A325CCA62272A28E0074F70D /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		A3C5A505226E9E1100926FE0 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		A3E0DFA621AE087100926910 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E009E60A219B6C3700CA081E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E009E60C219B6C3700CA081E /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +92,8 @@
 		5A5FD6A7219A753B000B31AB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A325CCA3227299E40074F70D /* Views */,
+				A324A7DB22729255007E790B /* Models */,
 				5A7B45EF219A7B7700DF87DF /* Services */,
 				5A7B45EE219A7B6000DF87DF /* Networking */,
 				5A5FD6A8219A753B000B31AB /* AppDelegate.swift */,
@@ -115,6 +125,7 @@
 		5A7B45EC219A7A8400DF87DF /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				A3C5A505226E9E1100926FE0 /* UserViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -132,6 +143,23 @@
 			children = (
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A324A7DB22729255007E790B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A324A7DC2272927B007E790B /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A325CCA3227299E40074F70D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A325CCA422729A060074F70D /* LoginView.swift */,
+				A325CCA62272A28E0074F70D /* SignupView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AE87ACD2ED3C90104379C7A5 /* Pods */ = {
@@ -254,16 +282,22 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -279,8 +313,12 @@
 			files = (
 				A3E0DFA721AE087100926910 /* LoginViewController.swift in Sources */,
 				E09E2146219B60DC00EE7FA7 /* Tester.swift in Sources */,
+				A324A7DD2272927B007E790B /* User.swift in Sources */,
 				5A5FD6AB219A753B000B31AB /* ViewController.swift in Sources */,
+				A3C5A506226E9E1100926FE0 /* UserViewModel.swift in Sources */,
 				5A5FD6A9219A753B000B31AB /* AppDelegate.swift in Sources */,
+				A325CCA522729A060074F70D /* LoginView.swift in Sources */,
+				A325CCA72272A28E0074F70D /* SignupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
