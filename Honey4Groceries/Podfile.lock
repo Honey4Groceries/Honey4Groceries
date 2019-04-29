@@ -1,5 +1,9 @@
 PODS:
   - Alamofire (4.7.3)
+  - Bond (7.4.2):
+    - Differ (~> 1.3)
+    - ReactiveKit (~> 3.10)
+  - Differ (1.4.1)
   - Firebase/Auth (5.12.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.0.5)
@@ -61,11 +65,13 @@ PODS:
   - nanopb/encode (0.3.901)
   - PromiseKit/CorePromise (6.5.2)
   - PureLayout (3.1.4)
+  - ReactiveKit (3.10.0)
   - SwiftLint (0.27.0)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - Bond
   - Firebase/Auth
   - Firebase/Core
   - PromiseKit/CorePromise (~> 6.0)
@@ -76,6 +82,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Bond
+    - Differ
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -88,11 +96,14 @@ SPEC REPOS:
     - nanopb
     - PromiseKit
     - PureLayout
+    - ReactiveKit
     - SwiftLint
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Bond: a6daf935daf8a96517e7ff08a185680ada6a9821
+  Differ: ca4350872e32a1aeedf3d9e2d9e47127833bfa9c
   Firebase: 9190018e296139d938b99521cde0c15a6e8d2946
   FirebaseAnalytics: 63202d2665de4e6adcbdce189135255d8b5962ba
   FirebaseAuth: 9299ab178271bec7426967b05b2718bb6fc31f17
@@ -105,9 +116,10 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   PromiseKit: 27c1601bfb73405871b805bcb8cf7e55c4dad3db
   PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
+  ReactiveKit: af0d53664c2326a03d2c9f92c92a30bbc7f3a9ee
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 6e102da3fc5fec8270e1f44265bdb204122416a9
+PODFILE CHECKSUM: abf4d20e352e22b547d2fa6a062320ef89767c11
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

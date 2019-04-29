@@ -13,5 +13,6 @@ target 'Honey4Groceries' do
   pod 'PureLayout'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Bond'
 
 end

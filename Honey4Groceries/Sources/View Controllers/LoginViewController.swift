@@ -8,10 +8,12 @@
 import UIKit
 import PureLayout
 import Firebase
+import Bond
 
 /// The view controller for the login page.
 class LoginViewController: UIViewController {
-
+    
+    //
     var handle: AuthStateDidChangeListenerHandle?
 
     /// The dimensions of the screen
@@ -71,7 +73,6 @@ class LoginViewController: UIViewController {
         button.backgroundColor = .clear
         button.autoSetDimension(.width, toSize: buttonWidth)
         button.autoSetDimension(.height, toSize: buttonHeight)
-        button.addTarget(self, action: #selector(self.loginAction), for: .touchUpInside)
         return button
     }()
 
@@ -183,6 +184,15 @@ class LoginViewController: UIViewController {
 
         // Sets up the constraints for the subviews.
         self.setupConstraints()
+        
+        // Binds view to viewModel
+        self.bindViewModel()
+    }
+    
+    func bindViewModel() {
+        self.loginButton.reactive.tap.observeNext {
+            self.view
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -193,34 +203,6 @@ class LoginViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         Auth.auth().removeStateDidChangeListener(self.handle!)
     }
-}
-
-/// An extension to the UITextField for new custom functions.
-extension UITextField {
-
-    /**
-     Sets the left padding value for the UITextField.
-     
-     Calling this function prevents elements in the text field from touching the text field boundary.
-     
-     - Parameter amount: the amount to inset the elements inside the text field from the left boundary.
-     */
-    func setLeftPaddingPoints(_ amount: CGFloat) {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-        self.leftView = paddingView
-        self.leftViewMode = .always
-    }
-
-    /**
-     Sets the right padding values for the UITextField.
-     
-     Calling this function prevents elements in the text field from touching the text field boundary.
-     
-     - Parameter amount: the amount to inset the elements inside the text field from the right boundary.
-     */
-    func setRightPaddingPoints(_ amount: CGFloat) {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-        self.rightView = paddingView
-        self.rightViewMode = .always
-    }
+    
+    
 }

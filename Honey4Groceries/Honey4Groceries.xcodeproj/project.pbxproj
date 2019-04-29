@@ -12,6 +12,7 @@
 		5A5FD6AB219A753B000B31AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5FD6AA219A753B000B31AB /* ViewController.swift */; };
 		5A5FD6B0219A753F000B31AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A5FD6AF219A753F000B31AB /* Assets.xcassets */; };
 		5A5FD6B3219A753F000B31AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5FD6B1219A753F000B31AB /* LaunchScreen.storyboard */; };
+		5AD3BDAA2276CABF00C2F7D3 /* UITextField+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD3BDA92276CABF00C2F7D3 /* UITextField+Padding.swift */; };
 		A324A7DD2272927B007E790B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324A7DC2272927B007E790B /* User.swift */; };
 		A325CCA522729A060074F70D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A325CCA422729A060074F70D /* LoginView.swift */; };
 		A325CCA72272A28E0074F70D /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A325CCA62272A28E0074F70D /* SignupView.swift */; };
@@ -32,6 +33,7 @@
 		5A5FD6AF219A753F000B31AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A5FD6B2219A753F000B31AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A5FD6B4219A753F000B31AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AD3BDA92276CABF00C2F7D3 /* UITextField+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Padding.swift"; sourceTree = "<group>"; };
 		A324A7DC2272927B007E790B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A325CCA422729A060074F70D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A325CCA62272A28E0074F70D /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
@@ -92,11 +94,12 @@
 		5A5FD6A7219A753B000B31AB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				5AD3BDA82276CA8500C2F7D3 /* Extensions */,
+				5A5FD6A8219A753B000B31AB /* AppDelegate.swift */,
 				A325CCA3227299E40074F70D /* Views */,
 				A324A7DB22729255007E790B /* Models */,
 				5A7B45EF219A7B7700DF87DF /* Services */,
 				5A7B45EE219A7B6000DF87DF /* Networking */,
-				5A5FD6A8219A753B000B31AB /* AppDelegate.swift */,
 				5A7B45EC219A7A8400DF87DF /* View Models */,
 				5A7B45EB219A7A7100DF87DF /* View Controllers */,
 			);
@@ -143,6 +146,14 @@
 			children = (
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		5AD3BDA82276CA8500C2F7D3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5AD3BDA92276CABF00C2F7D3 /* UITextField+Padding.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A324A7DB22729255007E790B /* Models */ = {
@@ -280,28 +291,34 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bond/Bond.framework",
+				"${BUILT_PRODUCTS_DIR}/Differ/Differ.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveKit/ReactiveKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bond.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differ.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -315,6 +332,7 @@
 				E09E2146219B60DC00EE7FA7 /* Tester.swift in Sources */,
 				A324A7DD2272927B007E790B /* User.swift in Sources */,
 				5A5FD6AB219A753B000B31AB /* ViewController.swift in Sources */,
+				5AD3BDAA2276CABF00C2F7D3 /* UITextField+Padding.swift in Sources */,
 				A3C5A506226E9E1100926FE0 /* UserViewModel.swift in Sources */,
 				5A5FD6A9219A753B000B31AB /* AppDelegate.swift in Sources */,
 				A325CCA522729A060074F70D /* LoginView.swift in Sources */,
