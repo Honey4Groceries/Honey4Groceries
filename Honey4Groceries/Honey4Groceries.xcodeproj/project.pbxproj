@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		186711B6351E5EFB52C9BA97 /* Pods_Honey4Groceries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D8F1DEF9D3421F20C29970D /* Pods_Honey4Groceries.framework */; };
+		5A30BCC621A9D2930032F77E /* ResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A30BCC521A9D2930032F77E /* ResponseProtocol.swift */; };
+		5A30BCC821A9D71F0032F77E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A30BCC721A9D71F0032F77E /* Response.swift */; };
 		5A5FD6A9219A753B000B31AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5FD6A8219A753B000B31AB /* AppDelegate.swift */; };
 		5A5FD6AB219A753B000B31AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5FD6AA219A753B000B31AB /* ViewController.swift */; };
 		5A5FD6B0219A753F000B31AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A5FD6AF219A753F000B31AB /* Assets.xcassets */; };
@@ -17,16 +19,26 @@
 		A325CCA522729A060074F70D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A325CCA422729A060074F70D /* LoginView.swift */; };
 		A325CCA72272A28E0074F70D /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A325CCA62272A28E0074F70D /* SignupView.swift */; };
 		A3C5A506226E9E1100926FE0 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5A505226E9E1100926FE0 /* UserViewModel.swift */; };
+		5AECDB9A21AA0C6B00E75D29 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDB9921AA0C6B00E75D29 /* RequestProtocol.swift */; };
+		5AECDBA221AA0E1800E75D29 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBA121AA0E1800E75D29 /* NetworkConstants.swift */; };
+		5AECDBA421AA0F9900E75D29 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBA321AA0F9900E75D29 /* Request.swift */; };
+		5AECDBA621AA105700E75D29 /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBA521AA105700E75D29 /* APIServiceProtocol.swift */; };
+		5AECDBA821AA10B700E75D29 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBA721AA10B700E75D29 /* APIConfig.swift */; };
+		5AECDBAA21AA175800E75D29 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBA921AA175800E75D29 /* APIService.swift */; };
+		5AECDBAC21AA1D1400E75D29 /* APIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBAB21AA1D1400E75D29 /* APIFactory.swift */; };
 		A3E0DFA721AE087100926910 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0DFA621AE087100926910 /* LoginViewController.swift */; };
 		E009E60B219B6C3700CA081E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60A219B6C3700CA081E /* Alamofire.framework */; };
 		E009E60D219B6C3700CA081E /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60C219B6C3700CA081E /* PromiseKit.framework */; };
 		E009E60F219B6C3700CA081E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60E219B6C3700CA081E /* SwiftyJSON.framework */; };
-		E09E2146219B60DC00EE7FA7 /* Tester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09E2145219B60DC00EE7FA7 /* Tester.swift */; };
+		E025CC6721D5DC5700898901 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E025CC6621D5DC5700898901 /* GoogleService-Info.plist */; };
+		E0AC201A21AD2467000513CA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AC201921AD2467000513CA /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		35927C906C3059E248BA10D8 /* Pods-Honey4Groceries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honey4Groceries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries.debug.xcconfig"; sourceTree = "<group>"; };
 		3D8F1DEF9D3421F20C29970D /* Pods_Honey4Groceries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Honey4Groceries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A30BCC521A9D2930032F77E /* ResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseProtocol.swift; sourceTree = "<group>"; };
+		5A30BCC721A9D71F0032F77E /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		5A5FD6A5219A753B000B31AB /* Honey4Groceries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Honey4Groceries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5FD6A8219A753B000B31AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A5FD6AA219A753B000B31AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,11 +50,19 @@
 		A325CCA422729A060074F70D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A325CCA62272A28E0074F70D /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		A3C5A505226E9E1100926FE0 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		5AECDB9921AA0C6B00E75D29 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		5AECDBA121AA0E1800E75D29 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		5AECDBA321AA0F9900E75D29 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		5AECDBA521AA105700E75D29 /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
+		5AECDBA721AA10B700E75D29 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		5AECDBA921AA175800E75D29 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		5AECDBAB21AA1D1400E75D29 /* APIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFactory.swift; sourceTree = "<group>"; };
 		A3E0DFA621AE087100926910 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E009E60A219B6C3700CA081E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E009E60C219B6C3700CA081E /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E009E60E219B6C3700CA081E /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E09E2145219B60DC00EE7FA7 /* Tester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tester.swift; sourceTree = "<group>"; };
+		E025CC6621D5DC5700898901 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E0AC201921AD2467000513CA /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		F3F4D0D3BB1DF8CEC4CE8B0D /* Pods-Honey4Groceries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honey4Groceries.release.xcconfig"; path = "Pods/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +118,9 @@
 				5A5FD6A8219A753B000B31AB /* AppDelegate.swift */,
 				A325CCA3227299E40074F70D /* Views */,
 				A324A7DB22729255007E790B /* Models */,
+				E025CC6621D5DC5700898901 /* GoogleService-Info.plist */,
+				E0AC201821AD2430000513CA /* Model */,
+				5AECDBA021AA0D0200E75D29 /* Extensions */,
 				5A7B45EF219A7B7700DF87DF /* Services */,
 				5A7B45EE219A7B6000DF87DF /* Networking */,
 				5A7B45EC219A7A8400DF87DF /* View Models */,
@@ -136,7 +159,15 @@
 		5A7B45EE219A7B6000DF87DF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				E09E2145219B60DC00EE7FA7 /* Tester.swift */,
+				5A30BCC521A9D2930032F77E /* ResponseProtocol.swift */,
+				5A30BCC721A9D71F0032F77E /* Response.swift */,
+				5AECDB9921AA0C6B00E75D29 /* RequestProtocol.swift */,
+				5AECDBA321AA0F9900E75D29 /* Request.swift */,
+				5AECDBA521AA105700E75D29 /* APIServiceProtocol.swift */,
+				5AECDBA921AA175800E75D29 /* APIService.swift */,
+				5AECDBA721AA10B700E75D29 /* APIConfig.swift */,
+				5AECDBAB21AA1D1400E75D29 /* APIFactory.swift */,
+				5AECDBA121AA0E1800E75D29 /* NetworkConstants.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -180,6 +211,14 @@
 				F3F4D0D3BB1DF8CEC4CE8B0D /* Pods-Honey4Groceries.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E0AC201821AD2430000513CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E0AC201921AD2467000513CA /* Store.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +283,7 @@
 			files = (
 				5A5FD6B3219A753F000B31AB /* LaunchScreen.storyboard in Resources */,
 				5A5FD6B0219A753F000B31AB /* Assets.xcassets in Resources */,
+				E025CC6721D5DC5700898901 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +368,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AECDBA221AA0E1800E75D29 /* NetworkConstants.swift in Sources */,
+				5AECDBA621AA105700E75D29 /* APIServiceProtocol.swift in Sources */,
+				5A30BCC821A9D71F0032F77E /* Response.swift in Sources */,
+				E0AC201A21AD2467000513CA /* Store.swift in Sources */,
+				5A30BCC621A9D2930032F77E /* ResponseProtocol.swift in Sources */,
+				5AECDBAC21AA1D1400E75D29 /* APIFactory.swift in Sources */,
+				5AECDBAA21AA175800E75D29 /* APIService.swift in Sources */,
+				5AECDB9A21AA0C6B00E75D29 /* RequestProtocol.swift in Sources */,
+				5AECDBA821AA10B700E75D29 /* APIConfig.swift in Sources */,
+				5AECDBA421AA0F9900E75D29 /* Request.swift in Sources */,
 				A3E0DFA721AE087100926910 /* LoginViewController.swift in Sources */,
 				E09E2146219B60DC00EE7FA7 /* Tester.swift in Sources */,
 				A324A7DD2272927B007E790B /* User.swift in Sources */,
