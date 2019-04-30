@@ -13,7 +13,9 @@ import Bond
 /// The view controller for the login page.
 class LoginViewController: UIViewController {
     
-    //
+    // ViewModel
+    var loginViewModel: LoginViewModel?
+    
     var handle: AuthStateDidChangeListenerHandle?
 
     /// The dimensions of the screen
@@ -157,7 +159,7 @@ class LoginViewController: UIViewController {
 
     /// Login the user after the button is pressed.
     @objc func loginAction(sender: UIButton) {
-        if let email = self.emailTextField.text, let password = self.passwordTextField.text{
+        if let email = self.emailTextField.text, let password = self.passwordTextField.text {
             Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
                 print("$$$"+(user?.description ?? "nil"))
                 print(error)
@@ -191,7 +193,16 @@ class LoginViewController: UIViewController {
     
     func bindViewModel() {
         self.loginButton.reactive.tap.observeNext {
-            self.view
+            self.loginViewModel?.login()
+        }
+        
+        self.emailTextField.reactive.text.observeNext { text in
+            guard let email = text else { return }
+            self.loginViewModel?.setUserEmail(email: email)
+        }
+        self.passwordTextField.reactive.text.observeNext { text in
+            guard let password = text else { return }
+            self.loginViewModel?.password = password
         }
     }
     
