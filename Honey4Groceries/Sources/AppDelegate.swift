@@ -13,16 +13,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions
+        launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let homeViewController = LoginViewController()
-        homeViewController.loginViewModel = LoginViewModel()
+        if let window = window {
+            let rootVC = WelcomeViewController(view: WelcomeView(frame: window.frame), viewModel: WelcomeViewModel())
+            
+            let navigationController = UINavigationController(rootViewController: rootVC)
+            window.rootViewController = navigationController
         
-        window!.rootViewController = homeViewController
-        window!.makeKeyAndVisible()
+            window.makeKeyAndVisible()
+        }
+        
         return true
     }
 

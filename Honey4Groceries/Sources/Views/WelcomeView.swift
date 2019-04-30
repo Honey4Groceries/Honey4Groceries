@@ -1,68 +1,55 @@
 //
-//  LoginViewController.swift
+//  UserView.swift
 //  Honey4Groceries
 //
-//  Created by Paul Pan on 2018/11/27.
+//  Created by Paul Pan on 2019/04/25.
 //
 
+import Foundation
 import UIKit
-import PureLayout
-import Firebase
-import Bond
 
-/// The view controller for the login page.
-class LoginViewController: UIViewController {
+public class WelcomeView: UIView, ViewProtocol {
     
-    // ViewModel
-    var loginViewModel: LoginViewModel?
+    var childViews: [UIView]
+    var screenWidth: CGFloat
+    var screenHeight: CGFloat
     
-    var handle: AuthStateDidChangeListenerHandle?
-
-    /// The dimensions of the screen
-    let screenSize: CGRect = UIScreen.main.bounds
-
-    /// The width of the screen
-    lazy var screenWidth = screenSize.width
-
-    /// The height of the screen.
-    lazy var screenHeight = screenSize.height
-
     /// The radius of the outer boundary corners of GUI elements.
     lazy var boundaryRadius: CGFloat = screenWidth * 0.01
-
+    
     /// The width of the outer boundary of GUI elements.
     let boundaryWidth: CGFloat = 1.0
-
+    
     /// The color of the outer boundary of GUI elements.
     let boundaryColor = UIColor.gray.cgColor
-
+    
     /// The height of the textfields.
     lazy var textfieldHeight: CGFloat = screenHeight * 0.05
-
+    
     /// The amount of horizontal inset for the text fields from the edges.
     lazy var textfieldXInset: CGFloat = screenWidth * 0.05
-
+    
     /// The amount to inset the email text field from the top safe area/edge.
     lazy var emailYInset: CGFloat = screenHeight * 0.125
-
+    
     /// The amount to inset the password text field from the top safe area/edge.
     lazy var passwordYInset: CGFloat = screenHeight * 0.225
-
+    
     /// The amount to inset the sign-up button from the center vertical axis.
     lazy var buttonXInset: CGFloat = screenWidth * 0.10
-
+    
     /// The amount to inset the login button from the top safe area/edge.
     lazy var buttonYInset: CGFloat = screenHeight * 0.33
-
+    
     /// The width of the login button.
     lazy var buttonWidth: CGFloat = screenWidth * 0.3
-
+    
     /// The height of the login button.
     lazy var buttonHeight: CGFloat = screenHeight * 0.045
-
+    
     /// The vertical padding of the login button placeholder.
     lazy var verticalPadding: CGFloat = screenWidth * 0.03
-
+    
     /// The login button.
     lazy var loginButton: UIButton = {
         let button = UIButton()
@@ -77,8 +64,8 @@ class LoginViewController: UIViewController {
         button.autoSetDimension(.height, toSize: buttonHeight)
         return button
     }()
-
-    /// The login button.
+    
+    /// The signup button.
     lazy var signupButton: UIButton = {
         let button = UIButton()
         button.setTitle("Sign Up", for: .normal)
@@ -90,11 +77,19 @@ class LoginViewController: UIViewController {
         button.backgroundColor = .clear
         button.autoSetDimension(.width, toSize: buttonWidth)
         button.autoSetDimension(.height, toSize: buttonHeight)
-        button.addTarget(self, action: #selector(self.signupAction), for: .touchUpInside)
         return button
     }()
-
-
+    
+    /// Login label
+    lazy var loginLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.text = "Login"
+        label.autoSetDimension(.width, toSize: 200)
+        label.autoSetDimension(.height, toSize: 70)
+        return label
+    }()
+    
     /// The text field for the email.
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
@@ -107,7 +102,7 @@ class LoginViewController: UIViewController {
         textField.autoSetDimension(.height, toSize: textfieldHeight)
         return textField
     }()
-
+    
     /// The text field for the password.
     lazy var passwordTextField: UITextField = {
         let textField = UITextField()
@@ -121,7 +116,7 @@ class LoginViewController: UIViewController {
         textField.autoSetDimension(.height, toSize: textfieldHeight)
         return textField
     }()
-
+    
     /**
      Set the constraints of the UI elements.
      
@@ -130,6 +125,9 @@ class LoginViewController: UIViewController {
      the UI elements are constrained by the top and bottom edges of the superview.
      */
     func setupConstraints() {
+        loginLabel.autoPinEdge(toSuperviewEdge: .top, withInset: screenHeight * 0.182)
+        loginLabel.autoAlignAxis(toSuperviewMarginAxis: .vertical)
+        
         loginButton.autoPinEdge(toSuperviewEdge: .left, withInset: buttonXInset)
         signupButton.autoPinEdge(toSuperviewEdge: .right, withInset: buttonXInset)
         if #available(iOS 11.0, *) {
@@ -148,72 +146,27 @@ class LoginViewController: UIViewController {
         passwordTextField.autoPinEdge(toSuperviewEdge: .left, withInset: textfieldXInset)
         passwordTextField.autoPinEdge(toSuperviewEdge: .right, withInset: textfieldXInset)
     }
-
-    /// Adds the subviews to the current view.
-    func addSubviews() {
-        self.view.addSubview(emailTextField)
-        self.view.addSubview(passwordTextField)
-        self.view.addSubview(loginButton)
-        self.view.addSubview(signupButton)
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-
-    /// Login the user after the button is pressed.
-    @objc func loginAction(sender: UIButton) {
-        if let email = self.emailTextField.text, let password = self.passwordTextField.text {
-            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-                print("$$$"+(user?.description ?? "nil"))
-                print(error)
-            }
-        }
-    }
-
-    /// Sign-up the user if the user has not already done so.
-    @objc func signupAction(sender: UIButton) {
-    }
-
-    /**
-     Do some additional setup after loading the view.
-     */
-    override func viewDidLoad() {
-        // Call the superclass' viewDidLoad method.
-        super.viewDidLoad()
-
-        // Set the background color of the current view to white.
-        self.view.backgroundColor = .white
-
-        // Adds subviews to the current view.
-        self.addSubviews()
-
-        // Sets up the constraints for the subviews.
-        self.setupConstraints()
+    
+    override init(frame: CGRect) {
+        self.screenWidth = frame.width
+        self.screenHeight = frame.height
+        self.childViews = []
         
-        // Binds view to viewModel
-        self.bindViewModel()
+        super.init(frame: frame)
+
+        initialize()
+        self.backgroundColor = .white
     }
     
-    func bindViewModel() {
-        self.loginButton.reactive.tap.observeNext {
-            self.loginViewModel?.login()
-        }
-        
-        self.emailTextField.reactive.text.observeNext { text in
-            guard let email = text else { return }
-            self.loginViewModel?.setUserEmail(email: email)
-        }
-        self.passwordTextField.reactive.text.observeNext { text in
-            guard let password = text else { return }
-            self.loginViewModel?.password = password
-        }
+    func addChildViews() {
+        self.childViews.append(loginButton)
+        self.childViews.append(loginLabel)
+        self.childViews.append(signupButton)
+        self.childViews.append(emailTextField)
+        self.childViews.append(passwordTextField)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.handle? = Auth.auth().addStateDidChangeListener { (auth, user) in
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        Auth.auth().removeStateDidChangeListener(self.handle!)
-    }
-    
-    
 }

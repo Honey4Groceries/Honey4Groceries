@@ -9,7 +9,8 @@ import Foundation
 import CoreLocation
 import Firebase
 
-public class LoginViewModel {
+/// ViewModel for Welcome Screen
+public class WelcomeViewModel: ViewModelProtocol {
     private let user: UserModel
     public var password: String
     
@@ -19,19 +20,21 @@ public class LoginViewModel {
     }
     
     public var location: CLLocation {
-        return user.location ?? CLLocation()
+        return self.user.location ?? CLLocation()
     }
     
     public func setUserEmail(email: String) {
-        user.email = email
+        self.user.email = email
     }
     
-    public func login() {
+    public func login() throws -> User {
         do {
-            let loginService = LoginService(user)
-            let firebaseUser = try loginService.login(password: self.password)
+            let authService = AuthService(user)
+            let firebaseUser = try authService.login(password: self.password)
+            return firebaseUser
         } catch {
-            print("hi")
+            print("\(error)")
+            throw error
         }
     }
 }

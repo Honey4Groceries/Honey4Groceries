@@ -8,14 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		186711B6351E5EFB52C9BA97 /* Pods_Honey4Groceries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D8F1DEF9D3421F20C29970D /* Pods_Honey4Groceries.framework */; };
+		5A03FED22278308B00CF01B7 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A03FED12278308B00CF01B7 /* ViewProtocol.swift */; };
+		5A03FED4227836B900CF01B7 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A03FED3227836B900CF01B7 /* ViewModelProtocol.swift */; };
+		5A03FED6227836F400CF01B7 /* ViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A03FED5227836F400CF01B7 /* ViewControllerProtocol.swift */; };
 		5A30BCC621A9D2930032F77E /* ResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A30BCC521A9D2930032F77E /* ResponseProtocol.swift */; };
 		5A30BCC821A9D71F0032F77E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A30BCC721A9D71F0032F77E /* Response.swift */; };
 		5A5FD6A9219A753B000B31AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5FD6A8219A753B000B31AB /* AppDelegate.swift */; };
-		5A5FD6AB219A753B000B31AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5FD6AA219A753B000B31AB /* ViewController.swift */; };
 		5A5FD6B0219A753F000B31AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A5FD6AF219A753F000B31AB /* Assets.xcassets */; };
 		5A5FD6B3219A753F000B31AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5FD6B1219A753F000B31AB /* LaunchScreen.storyboard */; };
 		5AD3BDAA2276CABF00C2F7D3 /* UITextField+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD3BDA92276CABF00C2F7D3 /* UITextField+Padding.swift */; };
-		5AD3BDAC227782F700C2F7D3 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD3BDAB227782F700C2F7D3 /* LoginService.swift */; };
+		5AD3BDAC227782F700C2F7D3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD3BDAB227782F700C2F7D3 /* AuthService.swift */; };
 		5AECDB9A21AA0C6B00E75D29 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDB9921AA0C6B00E75D29 /* RequestProtocol.swift */; };
 		5AECDBA221AA0E1800E75D29 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBA121AA0E1800E75D29 /* NetworkConstants.swift */; };
 		5AECDBA421AA0F9900E75D29 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBA321AA0F9900E75D29 /* Request.swift */; };
@@ -24,10 +26,10 @@
 		5AECDBAA21AA175800E75D29 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBA921AA175800E75D29 /* APIService.swift */; };
 		5AECDBAC21AA1D1400E75D29 /* APIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECDBAB21AA1D1400E75D29 /* APIFactory.swift */; };
 		A324A7DD2272927B007E790B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324A7DC2272927B007E790B /* UserModel.swift */; };
-		A325CCA522729A060074F70D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A325CCA422729A060074F70D /* LoginView.swift */; };
+		A325CCA522729A060074F70D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A325CCA422729A060074F70D /* WelcomeView.swift */; };
 		A325CCA72272A28E0074F70D /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A325CCA62272A28E0074F70D /* SignupView.swift */; };
-		A3C5A506226E9E1100926FE0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5A505226E9E1100926FE0 /* LoginViewModel.swift */; };
-		A3E0DFA721AE087100926910 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0DFA621AE087100926910 /* LoginViewController.swift */; };
+		A3C5A506226E9E1100926FE0 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5A505226E9E1100926FE0 /* WelcomeViewModel.swift */; };
+		A3E0DFA721AE087100926910 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0DFA621AE087100926910 /* WelcomeViewController.swift */; };
 		E009E60B219B6C3700CA081E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60A219B6C3700CA081E /* Alamofire.framework */; };
 		E009E60D219B6C3700CA081E /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60C219B6C3700CA081E /* PromiseKit.framework */; };
 		E009E60F219B6C3700CA081E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009E60E219B6C3700CA081E /* SwiftyJSON.framework */; };
@@ -38,16 +40,18 @@
 /* Begin PBXFileReference section */
 		35927C906C3059E248BA10D8 /* Pods-Honey4Groceries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honey4Groceries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Honey4Groceries/Pods-Honey4Groceries.debug.xcconfig"; sourceTree = "<group>"; };
 		3D8F1DEF9D3421F20C29970D /* Pods_Honey4Groceries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Honey4Groceries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A03FED12278308B00CF01B7 /* ViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
+		5A03FED3227836B900CF01B7 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		5A03FED5227836F400CF01B7 /* ViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerProtocol.swift; sourceTree = "<group>"; };
 		5A30BCC521A9D2930032F77E /* ResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseProtocol.swift; sourceTree = "<group>"; };
 		5A30BCC721A9D71F0032F77E /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		5A5FD6A5219A753B000B31AB /* Honey4Groceries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Honey4Groceries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5FD6A8219A753B000B31AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A5FD6AA219A753B000B31AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5A5FD6AF219A753F000B31AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A5FD6B2219A753F000B31AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A5FD6B4219A753F000B31AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AD3BDA92276CABF00C2F7D3 /* UITextField+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Padding.swift"; sourceTree = "<group>"; };
-		5AD3BDAB227782F700C2F7D3 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		5AD3BDAB227782F700C2F7D3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5AECDB9921AA0C6B00E75D29 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		5AECDBA121AA0E1800E75D29 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		5AECDBA321AA0F9900E75D29 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -56,10 +60,10 @@
 		5AECDBA921AA175800E75D29 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		5AECDBAB21AA1D1400E75D29 /* APIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFactory.swift; sourceTree = "<group>"; };
 		A324A7DC2272927B007E790B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		A325CCA422729A060074F70D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A325CCA422729A060074F70D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		A325CCA62272A28E0074F70D /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
-		A3C5A505226E9E1100926FE0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		A3E0DFA621AE087100926910 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A3C5A505226E9E1100926FE0 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		A3E0DFA621AE087100926910 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		E009E60A219B6C3700CA081E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E009E60C219B6C3700CA081E /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E009E60E219B6C3700CA081E /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,8 +146,8 @@
 		5A7B45EB219A7A7100DF87DF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5A5FD6AA219A753B000B31AB /* ViewController.swift */,
-				A3E0DFA621AE087100926910 /* LoginViewController.swift */,
+				A3E0DFA621AE087100926910 /* WelcomeViewController.swift */,
+				5A03FED5227836F400CF01B7 /* ViewControllerProtocol.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -151,7 +155,8 @@
 		5A7B45EC219A7A8400DF87DF /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				A3C5A505226E9E1100926FE0 /* LoginViewModel.swift */,
+				A3C5A505226E9E1100926FE0 /* WelcomeViewModel.swift */,
+				5A03FED3227836B900CF01B7 /* ViewModelProtocol.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -175,7 +180,7 @@
 		5A7B45EF219A7B7700DF87DF /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				5AD3BDAB227782F700C2F7D3 /* LoginService.swift */,
+				5AD3BDAB227782F700C2F7D3 /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -200,8 +205,9 @@
 		A325CCA3227299E40074F70D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A325CCA422729A060074F70D /* LoginView.swift */,
+				A325CCA422729A060074F70D /* WelcomeView.swift */,
 				A325CCA62272A28E0074F70D /* SignupView.swift */,
+				5A03FED12278308B00CF01B7 /* ViewProtocol.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -362,7 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AD3BDAC227782F700C2F7D3 /* LoginService.swift in Sources */,
+				5AD3BDAC227782F700C2F7D3 /* AuthService.swift in Sources */,
 				5AECDBA221AA0E1800E75D29 /* NetworkConstants.swift in Sources */,
 				5AECDBA621AA105700E75D29 /* APIServiceProtocol.swift in Sources */,
 				5A30BCC821A9D71F0032F77E /* Response.swift in Sources */,
@@ -373,13 +379,15 @@
 				5AECDB9A21AA0C6B00E75D29 /* RequestProtocol.swift in Sources */,
 				5AECDBA821AA10B700E75D29 /* APIConfig.swift in Sources */,
 				5AECDBA421AA0F9900E75D29 /* Request.swift in Sources */,
-				A3E0DFA721AE087100926910 /* LoginViewController.swift in Sources */,
+				A3E0DFA721AE087100926910 /* WelcomeViewController.swift in Sources */,
 				A324A7DD2272927B007E790B /* UserModel.swift in Sources */,
-				5A5FD6AB219A753B000B31AB /* ViewController.swift in Sources */,
 				5AD3BDAA2276CABF00C2F7D3 /* UITextField+Padding.swift in Sources */,
-				A3C5A506226E9E1100926FE0 /* LoginViewModel.swift in Sources */,
+				A3C5A506226E9E1100926FE0 /* WelcomeViewModel.swift in Sources */,
 				5A5FD6A9219A753B000B31AB /* AppDelegate.swift in Sources */,
-				A325CCA522729A060074F70D /* LoginView.swift in Sources */,
+				5A03FED4227836B900CF01B7 /* ViewModelProtocol.swift in Sources */,
+				A325CCA522729A060074F70D /* WelcomeView.swift in Sources */,
+				5A03FED6227836F400CF01B7 /* ViewControllerProtocol.swift in Sources */,
+				5A03FED22278308B00CF01B7 /* ViewProtocol.swift in Sources */,
 				A325CCA72272A28E0074F70D /* SignupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
