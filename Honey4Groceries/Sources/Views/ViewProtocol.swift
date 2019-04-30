@@ -9,8 +9,6 @@ import Foundation
 import UIKit
 
 protocol ViewProtocol: UIView {
-    /// List of childViews (subviews is keyword)
-    var childViews: [UIView] { get }
     
     var screenWidth: CGFloat { get set }
     var screenHeight: CGFloat { get set }
@@ -18,10 +16,7 @@ protocol ViewProtocol: UIView {
     /// Must be called in constructor
     func initialize()
     
-    /// Add all child views into self.childViews in the order of background to foreground
-    func addChildViews()
-    
-    /// Add all child views in self.childViews as subviews
+    /// Add subviews to self in order of back to front
     func addSubviews()
     
     /// Setup autolayout contraints for subviews
@@ -29,14 +24,8 @@ protocol ViewProtocol: UIView {
 }
 
 extension ViewProtocol {
-    func addSubviews() {
-        for view in self.childViews {
-            self.addSubview(view)
-        }
-    }
     
     func initialize() {
-        addChildViews()
         addSubviews()
         setupConstraints()
     }

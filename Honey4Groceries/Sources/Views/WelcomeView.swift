@@ -10,7 +10,6 @@ import UIKit
 
 public class WelcomeView: UIView, ViewProtocol {
     
-    var childViews: [UIView]
     var screenWidth: CGFloat
     var screenHeight: CGFloat
     
@@ -154,19 +153,20 @@ public class WelcomeView: UIView, ViewProtocol {
     override init(frame: CGRect) {
         self.screenWidth = frame.width
         self.screenHeight = frame.height
-        self.childViews = []
-        
+
         super.init(frame: frame)
 
-        initialize()
+        self.initialize()
+        
+        // Do any additional setup outside of the subviews here
         self.backgroundColor = .white
     }
     
-    func addChildViews() {
-        self.childViews.append(loginButton)
-        self.childViews.append(loginLabel)
-        self.childViews.append(signupButton)
-        self.childViews.append(emailTextField)
-        self.childViews.append(passwordTextField)
+    func addSubviews() {
+        self.addSubview(loginButton)
+        self.addSubview(loginLabel)
+        self.addSubview(signupButton)
+        self.addSubview(emailTextField)
+        self.addSubview(passwordTextField)
     }
 }
