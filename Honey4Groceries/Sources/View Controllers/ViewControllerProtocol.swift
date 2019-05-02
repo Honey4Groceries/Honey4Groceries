@@ -8,8 +8,9 @@
 import Foundation
 import UIKit
 
+/// Protocol for ViewController acting as binder in MVVM to bind view and viewModel
 protocol ViewControllerProtocol: UIViewController {
-    /// Bind viewmodel to viewcontroller
+    /// Bind viewmodel to view
     func bindViewModel()
     
     var viewModel: ViewModelProtocol {get set}

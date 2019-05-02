@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Placeholder protocol for ViewModels
 protocol ViewModelProtocol {
     
 }

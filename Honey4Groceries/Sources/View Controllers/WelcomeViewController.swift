@@ -24,12 +24,14 @@ class WelcomeViewController: UIViewController, ViewControllerProtocol {
         self.bindViewModel()
     }
     
+    /// Since we are not using .nib, this should never be called.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.viewModel = WelcomeViewModel()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.view = WelcomeView()
     }
     
+    /// Required for all UIViewControllers
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -58,7 +60,7 @@ class WelcomeViewController: UIViewController, ViewControllerProtocol {
         
         _ = welcomeView.passwordTextField.reactive.text.observeNext { text in
             guard let password = text else { return }
-            welcomeViewModel.password = password
+            welcomeViewModel.setPassword(password: password)
         }
     }
 }
