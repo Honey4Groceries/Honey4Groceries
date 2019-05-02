@@ -23,19 +23,27 @@ public class AuthService {
     /// - Returns:
     ///     - Firebase provided User object
     /// - Throws:
-    ///     - invalidLogin: if login is unsuccessful
+    ///     - FIRAuthError returned from firebase
     public func login(password: String) throws -> User {
         var retUser: User?
+        var retError: Error?
+        
         Auth.auth().signIn(withEmail: user.email, password: password) { [weak self] result, error in
             guard self != nil else { return }
+            
+            guard error == nil else {
+                retError = error
+                return
+            }
+            
             retUser = result?.user
         }
         
-        if retUser != nil {
-            return retUser!
-        } else {
-            throw AuthServiceError.invalidLogin
+        if retError != nil {
+            throw retError!
         }
+        
+        return retUser!
     }
     
     /// Sign up user on Firebase
@@ -45,23 +53,26 @@ public class AuthService {
     /// - Returns:
     ///     - Firebase provided User object
     /// - Throws:
-    ///     - invalidSignup: if signup is unsuccessful
+    ///     - FIRAuthError returned from firebase
     public func signup(password: String) throws -> User {
         var retUser: User?
+        var retError: Error?
+        
         Auth.auth().createUser(withEmail: user.email, password: password) { [weak self] result, error in
             guard self != nil else { return }
+            
+            guard error == nil else {
+                retError = error
+                return
+            }
+            
             retUser = result?.user
         }
         
-        if retUser != nil {
-            return retUser!
-        } else {
-            throw AuthServiceError.invalidSignup
+        if retError != nil {
+            throw retError!
         }
-    }
-    
-    enum AuthServiceError: Error {
-        case invalidLogin
-        case invalidSignup
+        
+        return retUser!
     }
 }
